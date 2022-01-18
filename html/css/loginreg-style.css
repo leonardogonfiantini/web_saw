@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto',sans-serif;
+	color: white;
+}
+
+body{
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background-image: url("../img/background3.jpg");
+	background-size:     cover;          
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}
+
+.container{
+	max-width: 700px;
+	width: 100%;
+	background: rgba(1, 0, 3, 0.664);
+	padding: 20px 30px;
+	border-radius: 7px;
+}
+
+.container .title{
+	font-size: 35px;
+	font-weight: 450;
+	padding: 5px;
+	position: relative;
+}
+
+.container .title::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 50px;
+	
+	background-color: rgb(44, 43, 49);
+	
+}
+
+.container form .user-details{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px 0 20px 0;
+}
+
+form .user-details .input-box{
+	margin-bottom: 15px;
+	width: calc(100% / 2 - 20px);
+}
+
+.userr-details .input-box .details{
+	display: block;
+	font-weight: 500;
+	margin-bottom: 5px;
+	
+}
+.user-details .input-box input{
+	height: 40px;
+	width: 100%;
+	border-radius: 7px;
+	border: 1px solid rgb(44, 43, 49);
+	padding-left: 15px;
+	margin-top: 10px;
+	font-size: 16px;
+	border-bottom-width: 2px;
+	transition: all 0.8s ease;
+	border-color: rgba(1, 0, 3, 0.664);
+	color: black;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 10%;
+    height: 2em;
+	top: 20%;
+}
+
+
+
+form .button{
+	height: 45px;
+	margin: 45px 0;
+}
+
+form .button input{
+	height: 100%;
+	width: 100%;
+	border: none;
+	border-radius: 7px;
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 2px;
+	background: rgba(88, 88, 88, 0.692);
+}
+
+form .button input:hover{
+	background: rgba(88, 88, 88, 0.884);
+}
+
+

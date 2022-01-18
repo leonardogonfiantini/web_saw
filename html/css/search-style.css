@@ -1,0 +1,155 @@
+.card-search {
+    position:absolute;
+    background-color: rgb(40, 24, 119);
+    width: 45%;
+    height: 45%;
+    border: 2px solid black;
+    transition: 0.5s ease;
+    overflow: hidden;
+}
+
+.card-search .content h1{
+    position:absolute;
+    left: 10%;
+    color:white;
+    top:10%;
+    font-size: 3vh;
+}
+
+.card-search .content p {
+    position: relative;
+    color:white;
+    top:55px;
+    left:25px;
+    font-size: 2.2vh;
+}
+
+.card-search .content img {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    width: 20%;
+    
+}
+
+.card-search:hover {
+    background-color:white;
+    transform: scale(1.05);
+}
+
+.card-search:hover .content p{
+    color: black;
+    transform: scale(1.05);
+}
+
+.card-search:hover .content h1{
+    color: black;
+    transform: scale(1.05);
+}
+/* BLOCCO */
+
+.search-one {
+    background-color: rgb(23, 13, 70);
+    height: 25%;
+}
+
+.search-one .position {
+    position:relative;
+    width:100%;
+    height:100%;
+    top:0%;
+    left:0%;
+}
+
+.search-one .right {
+    position: absolute;
+    top: 20%;
+    bottom: 10%;
+    right:0;
+    width: 45%;
+    height: 70%;
+}
+
+.search-one .right img {
+    object-fit: cover;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    box-shadow: 0 2px 3px 0 black;
+
+}
+
+.search-one .results h1 {
+    color: white;
+    font-size: 3.3vh;
+    position: absolute;
+    top: 5%;
+    left:5%;
+
+}
+
+.search-one .results p {
+    color: white;
+    font-size: 2.8vh;
+    position: absolute;
+    top: 10%;
+    left:5%;
+
+}
+
+/* POSIZIONI BLOCCHI */
+
+.search-one .\30 {
+    position:absolute;
+    top:20%;
+    bottom:10%;
+    left:5%;
+    width:40%;
+    height:60%;
+    animation: fadein 1s;
+}
+
+
+.search-one .\31 {
+    position:absolute;
+    top:20%;
+    bottom:10%;
+    left: 25%;
+    width:40%;
+    height:60%;
+    animation: fadein 2s;
+}
+
+.search-one .\32 {
+    position:absolute;
+    top:20%;
+    bottom:10%;
+    left: 45%;
+    width:40%;
+    height:60%;
+    animation: fadein 3s;
+}
+
+.search-one .\33 {
+    position:absolute;
+    top:20%;
+    bottom:10%;
+    left: 65%;
+    width:40%;
+    height:60%;
+    animation: fadein 4s;
+}
+
+.search-one .\34 {
+    position:absolute;
+    top:20%;
+    bottom:10%;
+    left: 85%;
+    width:40%;
+    height:60%;
+    animation: fadein 5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

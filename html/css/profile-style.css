@@ -1,0 +1,149 @@
+body{
+  background-color: rgb(23, 13, 70);
+  background-image: url("../img/background3.jpg");
+  background-position: center;       
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  color: white;
+}
+/* start profile card */
+#user_img{ /* my image-style */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.card h1{ /* my h-style */
+  color: black;
+}
+.card h2{ /* my h-style */
+  color: black;  
+  text-align: center;
+  margin: 2%;
+}
+.card p{ /* my p-style */
+  color: grey;
+}
+.card {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 4px;
+    display: inline-block;  /* <-- */
+    /* float: left; */
+    max-width: 300px;
+    margin: 1%;
+    text-align: center;
+    font-family: arial;
+}
+  
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  /* padding: 4px; */
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.card button:hover, a:hover {
+  opacity: 0.7;
+}
+/* end profile card */
+
+#info{
+  background-color: rgb(23, 13, 70);
+  color: white;
+  display: inline-block;
+  opacity: 0.85;
+  /* padding: 95px; */
+  width: 80%;
+  height: 100%;
+}
+
+#info a {
+  background-color: rgb(40, 24, 119);
+  color: white;
+  cursor: pointer;
+  float: left;
+  font-size: medium;
+  display: inline;
+  padding: 1% 10.7%;
+  text-align: center;
+  text-decoration: none;
+}
+#info a:hover {
+  background-color: white;
+  color: black;
+}
+
+#menu{
+  display: flex;
+}
+
+
+#anteprima{
+  display: block; 
+}
+#viaggi{
+  display: none;
+  text-align: center;
+}
+#edit{
+  color: white;
+  display: none;
+  text-align: center;
+}
+input[type=submit]{
+	background-color: rgb(40, 24, 119);
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+	padding: 20px 60px;
+}
+input[type=submit]:hover{
+  background-color: white;
+  color: black;
+}
+input[type=text], input[type=email], input[type=password]{
+	border: 0;
+	border-radius: 20px;
+  padding: 20px 60px;
+}
+#info button{
+  background-color: rgb(40, 24, 119);
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+	padding: 20px 60px;
+}
+
+#logout{
+  display: none;
+  text-align: center;
+}
+
+/* #user-box{
+	background: rgb(40, 24, 119);
+  float: center;
+  height: 90%;
+  opacity: 0.85;
+  width: 100%;
+  text-align: center;
+} */
