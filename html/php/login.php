@@ -1,80 +1,49 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
+
+<link rel="stylesheet" type="text/css" href="../css/loginreg-style.css">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Area di Login</title>
-	<link rel="stylesheet" type="text/css" href="../css/loginreg-style.css">
-  <link rel="icon" href="../favicon.ico" type="image/ico">
+    <title>Log-in</title>
 </head>
+
 <body>
 
-	<div>
-		<div class="container">  
-    
-			<p class="title">Login</p>
-      
-			<form method="post">
-				<div class="user-details">
-					<div class="input-box">
-						<span class="details">Email</span>
-						<input type="text" id="email" name="email" placeholder="Inserisci Email" required>
-					</div>
-					<div class="input-box">
-						<span class="details">Password</span>
-						<input type="password" id="pass" name="pass" placeholder="Inserisci Password" required>
-					</div>
-				</div>
-				<div class="button">
-					<input type="submit" name="submit" value="Accedi">
-				</div>
-        <div>
-					<span class="clickable-text">Non hai un account? <a href="registration.php">Registrati</a></span>
-				</div>
-			</form>
 
-    <?php
-    session_start();
-    $_SESSION['login'] = "FALSE";
-    $_SESSION['admin'] = "FALSE";
-    $_SESSION['ID'] = "";
-    $_SESSION['pass'] = "";
+<?php
 
-    require('../database.php');
-    if(isset($_POST["submit"]) && !empty($_POST["pass"])){
-      $email = $con->real_escape_string($_POST['email']);
-      $pass = $con->real_escape_string($_POST['pass']);
+	if(isset($_POST['button1'])) {
+		include('../../private/loginprocedure.php');
+	}
+?>
 
-      //STATEMENT PREPARATO
-      $stmt = $con->prepare("SELECT email, pass FROM users WHERE email = ?");
-      $stmt->bind_param('s', $email);
-      $stmt->execute();
-      $res = $stmt->get_result();
-      $user = $res->fetch_assoc();
 
-      //CONTROLLO SE LA MAIL E' PRESENTE NEL DATABASE
-      if($email != $user['email']){
-        echo "Utente non trovato";
-        exit;
-      } 
-      
-      //CONTROLLO SE LA PASSWORD E' CORRETTA
-      if(password_verify($pass, $user['pass'])){
-        if($user['email'] == "root@admin.it") 
-          $_SESSION['admin'] = TRUE;
-        echo "Benvenuto " . $email . "!";
-        $_SESSION['login'] = "TRUE";
-        $_SESSION['ID'] = $_POST['email'];
-        $_SESSION['pass'] = $_POST['pass'];
-        header("Location: validate.php");
-      }
-      else{
-        $_SESSION['validate'] = "NO";
-        header("Location: validate.php");
-        //echo "Password non corretta";
-        exit;
-      }
-    }
-    ?>
+<form method="post">
+
+    <div class = "divleft">
+        <img src="../img/epoquechar.jpg"  width="100%" height="100%"> 
+    </div>
+
+    <div class="returnhome">
+          <a href="homepage.php"> Torna alla homepage </a>
+    </div>
+
+    <div class="divright">
+
+        <h1 style="margin-top:26%"> Inserisci email e password! </h1>
+
+        <div> <input type="email" id="email" name="email" placeholder="E-mail"required /> </div>
+        <div> <input type="password" id="pass" name="pass" minlength="8" placeholder="Password" required /> </div>
+
+        <div> <button type="submit" class="btn" name="button1"> Submit </button>  </div>
+
+        <div> 
+            <p> Non hai ancora un account?
+            <a class="active" href="registration.php"> Sign up </a> 
+            </p>
+        </div>
+    </div>
+</form>
 
 </body>
 </html>
