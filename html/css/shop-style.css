@@ -81,7 +81,9 @@ html, body {
     position:absolute;
     color: black;
     font-size: 2vh;
-    top:55%;
+    top:50%;
+    width:90%;
+    margin-left: 2%;
     text-align:center;
     z-index:4;
 }
