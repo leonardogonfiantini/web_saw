@@ -89,20 +89,24 @@
     top: 11%;
     border: none;
     height: 80%;
-    width:80%;
+    width:90%;
     left: 3%;
     background-color: white;
 }
 
 .cover input::placeholder {
-    font-size: 12px;
+    font-size: 1.5vh;
+}
+
+.cover input:focus {
+    outline: none;
 }
 
 .ok {
     position: absolute;
     background-color: rgb(51, 28, 156);
     border: none;
-    left:90%;
+    left:98%;
     height:100%;
     width: 25%;
     transition: 0.4s;

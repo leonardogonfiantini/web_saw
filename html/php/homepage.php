@@ -162,44 +162,6 @@
                             <img src="../img/social/linkedin.png" type="img" width="50%" height="50%">
                         </div></a>
                     </div>
-
-                    <div class="profile bot-left">
-                        <img src="../img/lillo.jpg" class="bigimg" type="img" width="28%" height="70%">
-                        <h1> Da Baby </h1>
-                        <h2> css master </h2>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, velit? Lorem ipsum dolor sit amet.</p>
-                        <a href="homepage.php"> <div class="icon"> 
-                            <img src="../img/social/instagram.png" type="img" width="50%" height="50%">
-                        </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:10%"> 
-                            <img src="../img/social/facebook.png" type="img" width="50%" height="50%">
-                        </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:20%"> 
-                            <img src="../img/social/twitter.png" type="img" width="50%" height="50%">
-                        </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:30%"> 
-                            <img src="../img/social/linkedin.png" type="img" width="50%" height="50%">
-                        </div></a>
-                    </div>
-
-                    <div class="profile bot-right">
-                        <img src="../img/lillo.jpg" class="bigimg" type="img" width="28%" height="70%">
-                        <h1> Da Baby </h1>
-                        <h2> css master </h2>
-                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, velit? Lorem, ipsum dolor. </p>
-                        <a href="homepage.php"> <div class="icon"> 
-                            <img src="../img/social/instagram.png" type="img" width="50%" height="50%">
-                        </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:10%"> 
-                            <img src="../img/social/facebook.png" type="img" width="50%" height="50%">
-                        </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:20%"> 
-                            <img src="../img/social/twitter.png" type="img" width="50%" height="50%">
-                        </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:30%"> 
-                            <img src="../img/social/linkedin.png" type="img" width="50%" height="50%">
-                        </div></a>
-                    </div>
                 </div>
             </div>
         </section>
