@@ -44,7 +44,7 @@
                     echo "<div class=card>";
                         echo "<img src=".$row['img']." type=img>";
                         echo "<p>".$row['descr']."</p>";
-                        echo "<button class=find id=".$row['nameproduct']."-btnname name=".$row['nameproduct']."  type=submit> Scopri di piu </button>";
+                        echo "<button class=find id=".$row['nameproduct']."-infobtn name=".$row['nameproduct']."  type=submit> Scopri di piu </button>";
                         echo "<button class=shop id=goshop type=submit> Vai allo shop! </button>";
                     echo "</div>";
 
@@ -55,7 +55,7 @@
                     echo "<div class=card>";
                         echo "<img src=".$row['img']." type=img>";
                         echo "<p>".$row['descr']."</p>";
-                        echo "<button class=find id=".$row['nameproduct']."-btnname name=".$row['nameproduct']." type=submit> Scopri di piu </button>";
+                        echo "<button class=find id=".$row['nameproduct']."-infobtn name=".$row['nameproduct']." type=submit> Scopri di piu </button>";
                         echo "<button class=shop id=goshop type=submit> Vai allo shop! </button>";
                     echo "</div>";
                     
@@ -66,7 +66,7 @@
                         echo "<div class=card>";
                         echo "<img src=".$row['img']." type=img>";
                         echo "<p>".$row['descr']."</p>";
-                        echo "<button class=find id=".$row['nameproduct']."-btnname name=".$row['nameproduct']." type=submit> Scopri di piu </button>";
+                        echo "<button class=find id=".$row['nameproduct']."-infobtn name=".$row['nameproduct']." type=submit> Scopri di piu </button>";
                         echo "<button class=shop id=goshop type=submit> Vai allo shop! </button>";
                     echo "</div>";
 
@@ -78,6 +78,22 @@
             $result->close();
             $mysqli->close();
         ?>
+
+
+    <script> 
+        var buttons = document.getElementsByTagName('button')
+        for (let i = 0; i < buttons.length; i++) {
+            if (buttons[i].id != "" && buttons[i].id.match("-infobtn") != null) {
+                buttons[i].onclick = function () {
+                    location.replace("infopage.php?info="+buttons[i].name);
+                }
+            } else {
+                buttons[i].onclick = function () {
+                    location.replace("shop.php");
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>

@@ -39,9 +39,9 @@ register($email, $pass, $first_name, $last_name, $baseurl);
 echo "[-] Calling login.php\n";
 login($email, $pass, $baseurl);
 
-/*
-echo "[-] Calling show_profile.php\n";
 
+//echo "[-] Calling show_profile.php\n";
+/*
 echo check_correct_user($email, $first_name, $last_name, show_logged_user($baseurl))
     ? "[*] Success!\n"
     : "[*] Failed\n";

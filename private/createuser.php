@@ -1,6 +1,4 @@
 <?php
-    $cyphpasswd = password_hash($_POST['pass'], PASSWORD_DEFAULT);		
-
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //error reporting for mysql server
     $mysqli = mysqli_connect('localhost', 'root', '1234', 'dbUtenti');
 
@@ -19,25 +17,26 @@
         }
     }
 
-    $result->close();
+    $cyphpasswd = password_hash($_POST['pass'], PASSWORD_DEFAULT);		
 
-    $firstname = mysqli_real_escape_string($mysqli, $_POST['firstname']);
-    $lastname = mysqli_real_escape_string($mysqli, $_POST['lastname']);
-    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
 
-    if ($exist = $mysqli->query("SELECT * FROM userdata WHERE email='".$email."'")) {
-        if ($exist->num_rows > 0) {
-            echo "user already exist";
-        } else {
-            $mysqli->query("INSERT INTO userdata (firstname, lastname, email, passwordd) 
-            VALUES ('".$firstname."', '".$lastname."', '".$email."','".$cyphpasswd."')");
+    $result = $mysqli->prepare("SELECT * FROM userdata WHERE email LIKE ?");
+    $result->bind_param('s', $_POST['email']);
+    $result->execute();
+    $result->store_result();
 
-            if ($result = $mysqli->query("SHOW TABLES LIKE '".$table."'")) {
-                if($result->num_rows == 0) {
-                    echo "error during registration process";
-                }
-            }
-        }
+    if ($result->num_rows > 0) {
+        echo "user already exist";
+        $mysqli->close();
+        $result->close();
+        header("Location: registration.php");
+    } else {
+        $result = $mysqli->prepare("INSERT INTO userdata (firstname, lastname, email, passwordd) VALUES (?, ?, ?, ?)");
+        $result->bind_param('ssss', $_POST['firstname'], $_POST['lastname'], $_POST['email'], $cyphpasswd);
+        $result->execute();
+        $mysqli->close();
+        $result->close();
+        header("Location: homepage.php");
     }
 
 ?>

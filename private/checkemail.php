@@ -17,7 +17,6 @@
         }
     }
 
-
     $result = $mysqli->prepare("SELECT * FROM userdata WHERE email LIKE ?");
     $result->bind_param("s", $_GET['email']);
     $result->execute();

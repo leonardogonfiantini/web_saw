@@ -3,18 +3,28 @@
     $mysqli = mysqli_connect('localhost', 'root', '1234', 'dbUtenti');
 
     $table = "userdata";
-    $result = $mysqli->query("SELECT * FROM $table");
+    $result = $mysqli->prepare("SELECT id, passwordd FROM $table WHERE email LIKE ?");
+    $result->bind_param('s', $_POST['email']);
+    $result->execute();
+    $result->store_result();
+    $result->bind_result($idrow, $passwordrow); 
 
-    $password = mysqli_real_escape_string($mysqli, $_POST['pass']);
-    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
-
-    while ($row = mysqli_fetch_array($result)) {
-        if($email == $row['email'] && password_verify($password, $row['passwordd'])) {
+    if ($result->num_rows == 1) {
+        $result->fetch(); 
+        if (password_verify($_POST['pass'], $passwordrow)) {
             session_start();
             $_SESSION['authorized'] = "yes";
-            $_SESSION['id'] = $row['id'];
-
+            $_SESSION['id'] = $idrow;
+            $mysqli->close();
+            $result->close();
+            echo "[login ok]";
             header("Location: homepage.php");
         }
     } 
+    
+    
+    $mysqli->close();
+    $result->close();
+    echo "[login no]";
+    header("Location: login.php");
 ?>

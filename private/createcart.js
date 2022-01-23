@@ -124,7 +124,7 @@ if (sessionStorage.getItem("cart-number") != 0) {
         sessionStorage.setItem("cart-number", 0)
         
         Promise.all(fetches).then(function() {
-            location.replace("valutaci.php")
+            location.replace("shop.php")
           });
 
     }
