@@ -8,9 +8,6 @@
 <body>
     <?php 
         include("navbar.php"); 
-        /*
-        Get the content of the Jupiter article on English Wikipedia in HTML
-        */
         
         $page = $_GET['info'];
         $url = "https://it.wikipedia.org/w/rest.php/v1/page/" . $page . "/html";
@@ -26,21 +23,24 @@
 
         echo "<div class=content>";
             for ($i = 0; $i < 10; $i++) {
-                $pattern="/<\\/?a(\\s+.*?>|>)/";
-                $matches[0][$i] = preg_replace($pattern, "", $matches[0][$i]);
-                $pattern="/<span[^>]+\>/i";
-                $matches[0][$i] = preg_replace($pattern, "", $matches[0][$i]);
-                $pattern="/<sup[^>]+\>/i";
-                $matches[0][$i] = preg_replace($pattern, "", $matches[0][$i]);
-                $pattern="/<img[^>]+\>/i";
-                $matches[0][$i] = preg_replace($pattern, "", $matches[0][$i]);
-                $pattern="/\[(.*?)\]/i";
-                $matches[0][$i] = preg_replace($pattern, "", $matches[0][$i]);
+                $matches[0][$i] = sanitizeWikiPage($matches[0][$i]);
                 echo $matches[0][$i];
-
             }
         echo "</div>";
 
+        function sanitizeWikiPage($wiki) {
+            $pattern ="/<\\/?a(\\s+.*?>|>)/";
+            $wiki = preg_replace($pattern, "", $wiki);
+            $pattern ="/<span[^>]+\>/i";
+            $wiki = preg_replace($pattern, "", $wiki);
+            $pattern ="/<sup[^>]+\>/i";
+            $wiki = preg_replace($pattern, "", $wiki);
+            $pattern ="/<img[^>]+\>/i";
+            $wiki = preg_replace($pattern, "", $wiki);
+            $pattern="/\[(.*?)\]/i";
+            $wiki = preg_replace($pattern, "", $wiki);
+            return $wiki;
+        }
     ?>
 
 </body>
