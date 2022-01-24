@@ -1,9 +1,15 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
   background-color: rgb(23, 13, 70);
   background-image: url("../img/background3.jpg");
-  background-position: center;       
-  background-repeat: no-repeat;
-  /* background-size: cover; */
+  background-position: center;
+  background-repeat: no-repeat; */
+  background-size: cover;
   color: white;
 }
 /* start profile card */
@@ -13,31 +19,36 @@ body{
   margin-right: auto;
   width: 100%;
 }
-.card h1{ /* my h-style */
+/* .card h1{ // my h-style 
   color: black;
-}
+} */
 .card h2{ /* my h-style */
-  color: black;  
+  /* color: black;   */
   text-align: center;
   margin: 2%;
 }
-.card p{ /* my p-style */
+/* .card p{ // my p-style 
   color: grey;
-}
+} */
 .card {
-    background-color: white;
+    background-color: rgb(23, 13, 70);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border: 4px;
+    border-radius: 5%;
+    color: white;
     display: inline-block;  /* <-- */
+    left: 2%;
     /* float: left; */
     max-width: 300px;
     margin: 1%;
+    position: absolute;
+    top: 15%;
     text-align: center;
     font-family: arial;
 }
   
 .title {
-  color: grey;
+  /* color: grey; */
   font-size: 18px;
 }
 
@@ -46,8 +57,8 @@ body{
   outline: 0;
   display: inline-block;
   /* padding: 4px; */
-  color: white;
-  background-color: #000;
+  color: black;
+  background-color: white;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -57,22 +68,26 @@ body{
 .card a {
   text-decoration: none;
   font-size: 22px;
-  color: black;
+  color: white;
 }
 
-.card button:hover, a:hover {
+.card button:hover{
   opacity: 0.7;
 }
 /* end profile card */
 
 #info{
-  background-color: rgb(23, 13, 70);
+  background-color: rgb(23, 13, 70, 0.8);
+  border-radius: 5%;
   color: white;
   display: inline-block;
-  opacity: 0.85;
+  /* opacity: 0.85; */
   /* padding: 95px; */
-  width: 80%;
-  height: 100%;
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  width: 70%;
+  height: 110%;
 }
 
 #info a {
@@ -93,8 +108,8 @@ body{
 
 #menu{
   display: flex;
+  width: 95%;
 }
-
 
 #anteprima{
   display: block; 
@@ -106,6 +121,7 @@ body{
 #edit{
   color: white;
   display: none;
+  margin-top: 2%;
   text-align: center;
 }
 input[type=submit]{
@@ -121,9 +137,13 @@ input[type=submit]:hover{
   color: black;
 }
 input[type=text], input[type=email], input[type=password]{
-	border: 0;
+	/* border: 0; */
 	border-radius: 20px;
+  margin-bottom: 2%;
   padding: 20px 60px;
+}
+input[type=checkbox]{
+  margin-bottom: 2%;
 }
 #info button{
   background-color: rgb(40, 24, 119);

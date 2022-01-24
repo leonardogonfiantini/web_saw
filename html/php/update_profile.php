@@ -16,27 +16,28 @@
       // or die ('Unable to connect. Check your connection parameters.');
 
 
-    if(isset($_POST['Submit Changes'])){
-      $email = $_POST['email'];
-      $pass = $_POST['pass'];
-      $bio = $_POST['biography'];
-      $firstname = $_POST['firstname'];
-      $lastname = $_POST['lastname'];
-      $newsletter = $_POST['newsletter'];
-    $query = "UPDATE users SET firstname = '$firstname',
-                              lastname = '$lastname', 
-                              email = $email,
-                              pass = $pass,
-                              bio = $bio, 
-                              newsletter = '$newsletter' WHERE user_id = '$id'";
-    $result = mysqli_query($db, $query) or die(mysqli_error($db));
+    // if(isset($_POST['Submit Changes'])){
+    //   $email = $_POST['email'];
+    //   $pass = $_POST['pass'];
+    //   $bio = $_POST['biography'];
+    //   $firstname = $_POST['firstname'];
+    //   $lastname = $_POST['lastname'];
+    //   $newsletter = $_POST['newsletter'];
+    //   $query = "UPDATE users SET firstname = '$firstname',
+    //                           lastname = '$lastname', 
+    //                           email = $email,
+    //                           pass = $pass,
+    //                           bio = $bio, 
+    //                           newsletter = '$newsletter' WHERE user_id = '$id'";
+    //   $result = mysqli_query($db, $query) or die(mysqli_error($db));
+    // }
 
-    if(true) // if succes
-      echo "<h3>Profile's edited successful!</h3>";
-    else
-      echo "<h3>Something went wrong, retry...</h3>";
+    // if(true) // if succes
+    //   echo "<h3>Profile's edited successful!</h3>";
+    // else
+    //   echo "<h3>Something went wrong, retry...</h3>";
 
-      header("Refresh:2; profile.php");
+    //   header("Refresh:2; profile.php");
   ?>
 </body>
 </html>
