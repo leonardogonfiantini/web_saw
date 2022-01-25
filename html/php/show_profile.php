@@ -3,46 +3,50 @@
 <!-- OCCHIO CHE NON CI SIANO TAG RIPETUTI (4 HTML, 4 BODY, ETC...) -->
 <!DOCTYPE html>
 <html lang="en">
+	<?php
+			require('database.php');
+			session_start();
+	/*
+			//empty does both of the checks you are doing at once
+			//check if user is logged in first
+			if(empty($_SESSION['ID'])) {
+
+				//give error and start redirection to login page
+				//you may never see this `echo` because the redirect may happen too fast
+				echo "<h1>Please log in first to see this page.</h1>";
+				header('Refresh:2; homepage.php');
+
+				//kill page because user is not logged in and is waiting for redirection
+				die();
+			}
+			echo "<h3>Welcome to the member's area, " . $_SESSION['ID'] . "!</h3>";
+	*/
+
+			// $db = mysqli_connect("localhost","enrico","123","users")// temp
+			// 	or die ('Unable to connect. Check your connection parameters.'); // non serve? c'è già il require('database.php')
+
+			// preparo variabili per le info dell'utente
+			$stmt = $con->prepare("SELECT nome, cognome, email FROM users WHERE email = ?");
+			$stmt->bind_param('s', $_SESSION['ID']);
+			$stmt->execute();
+			$res = $stmt->get_result();
+			$user = $res->fetch_assoc();
+
+	?>
 <head>
 	<title> <?php echo $user['nome']; ?> </title>
 	<link rel="stylesheet" type="text/css" href="../css/profile-style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="../profile-script.js"></script>
 	<?php 
 		include("navbar.php"); 
 		// include("update_profile.php");
 	?>
 </head>
 <body>
-	<?php
-		  require('database.php');
-	?>
-	<?php
-		session_start();
-		$db = mysqli_connect("localhost","enrico","123","users")// temp
-			or die ('Unable to connect. Check your connection parameters.');
-
-		// preparo variabili per le info dell'utente
-		$stmt = $con->prepare("SELECT nome, cognome, email FROM users WHERE email = ?");
-		$stmt->bind_param('s', $_SESSION['ID']);
-		$stmt->execute();
-		$res = $stmt->get_result();
-		$user = $res->fetch_assoc();
-
-		//echo $user;
-
-
-		
-
-
-		// $query=mysqli_query($db,"SELECT * FROM users where user_id='$id'")or die(mysqli_error());
-		// $row=mysqli_fetch_array($query);
-
-	?>
-
 	<div class="card">
 		<h2>User Info</h2>
-		<img src="../img/profilo.png" alt="user_img" id="user_img">
+		<img src="<?php echo $user['img'];?>" alt="user_img" id="user_img">
+		<!-- <img src="../img/blank-profile-picture-973460_1280.webp" alt="user_img" id="user_img"> -->
 		<h1><?php echo $user['nome']; ?></h1>
 		<p class="title">CEO & Founder, Example</p>
 		<p>Harvard University</p>
@@ -57,27 +61,27 @@
 
 	<div id="info">
 		<div id="menu">
-			<a href="#" onclick="dispetti(1)" style="border-top-left-radius: 25%"> Preview </a>
-			<a href="#" onclick="dispetti(2)"> Travels </a>
-			<a href="#" onclick="dispetti(3)"> Edit Profile </a>
+			<a href="#" onclick="dispetti(1)" style="border-top-left-radius: 25%"> Anteprima </a>
+			<a href="#" onclick="dispetti(2)"> Viaggi </a>
+			<a href="#" onclick="dispetti(3)"> Modifica </a>
 			<a href="#" onclick="dispetti(4)" style="border-top-right-radius: 25%"> Logout </a>
 		</div>
 
 		<section id="anteprima">
-			<h2> Profile Preview :) </h2>
-			<p>Name: </p> <h3><?php echo $user['nome']; ?></h3><br>
-			<p>Surname: </p> <h3><?php echo $user['cognome']; ?></h3><br>
+			<h2> Anteprima </h2>
+			<p>Nome: </p> <h3><?php echo $user['nome']; ?></h3><br>
+			<p>Cognome: </p> <h3><?php echo $user['cognome']; ?></h3><br>
 			<p>Email: </p> <h3><?php echo $user['email']; ?></h3><br>
 			<p>URL foto profilo: </p> <h3><?php echo $user['img']; ?></h3><br>
-			<p>Biography: </p> <h3><?php echo $user['biografia']; ?></h3><br>
+			<p>Biografia: </p> <h3><?php echo $user['biografia']; ?></h3><br>
 		</section>
 
 		<section id="viaggi">
-			<h2> Click a button! </h2>
-			<button> Orders </button>
+			<h2> Clicca un bottone! </h2>
+			<button> Ordini </button>
 			<button> Wishlist </button>
 			<div id="orders">
-				<?php include("../private/orders_history.php"); ?>
+				<?php include("../private/orders.php"); ?>
 			</div>
 			<div id="wishlist">
 				<?php include("../private/wishlist.php"); ?>
@@ -86,20 +90,20 @@
 
 		<section id="edit">	
 			<form method="POST">
-				<label for="firstname"><h4>Firstname</h4></label>
-				<input type="text" id="firstname" placeholder="Edit your name...">
+				<label for="firstname"><h4>Nome</h4></label>
+				<input type="text" id="firstname" placeholder="<?php echo $user['nome']; ?>">
 
-				<label for="lastname"><h4>Lastname</h4></label>
-				<input type="text" id="lastname" placeholder="Edit your surname...">
+				<label for="lastname"><h4>Cognome</h4></label>
+				<input type="text" id="lastname" placeholder="<?php echo $user['cognome']; ?>">
 
 				<label for="img"><h4>Indirizzo URL della foto profilo</h4></label>
-				<input type="text" id="img" placeholder="Edit your URL...">
+				<input type="text" id="img" placeholder="<?php echo $user['img']; ?>">
 
 				<label for="bio"><h4>Biografia</h4></label>
-				<input type="text" id="biografia" placeholder="Tell us about you!">
+				<input type="text" id="biografia" placeholder="<?php echo $user['biografia']; ?>">
 
 				<label for="email"><h4>Email</h4></label>
-				<input type="email" id="email" placeholder="Edit your email..." required>
+				<input type="email" id="email" placeholder="<?php echo $user['email']; ?>" required>
 
 				<label for="pass_o"><h4>Password</h4></label>
 				<input type="password" id="pass_o" placeholder="Old password..." required><br>
@@ -115,7 +119,7 @@
 		<section id="logout">
 			<form action="logout.php">
 				<br>
-				<h2> Do you want to logout?? </h2>
+				<h2> Sei sicuro di voler uscire?? </h2>
 				<input type="submit" value="Logout">
 			</form>
 		</section>
@@ -151,8 +155,8 @@
 					alert("javascript error!");
 			}
 		}
-	</script>
-	<script> //script che tiene fermo il menù
+
+	 	//script che tiene fermo il menù
 		window.onscroll = function() {myFunction()};
 
 		var topnav = document.getElementById("topnav");

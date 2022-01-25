@@ -9,7 +9,7 @@ body{
   background-image: url("../img/background3.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
   color: white;
 }
 /* start profile card */
