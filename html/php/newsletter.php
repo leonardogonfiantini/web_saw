@@ -14,17 +14,41 @@
     try { // PRENDERE I DATI DAL DB!!!
         $mail->SMTPDebug = 2;                                       
         $mail->isSMTP();                                            
-        $mail->Host       = 'smtp.gfg.com;';                    
+        $mail->Host       = 'smtp.gfg.com;';
         $mail->SMTPAuth   = true;                             
         $mail->Username   = 'user@gfg.com';                 
         $mail->Password   = 'password';                        
         $mail->SMTPSecure = 'tls';                              
         $mail->Port       = 587;  
     
-        $mail->setFrom('from@gfg.com', 'Name');           
-        $mail->addAddress('receiver1@gfg.com');
+        $mail->setFrom('from@gfg.com', 'Name');         // creiamo una mail apposita?  
+        $mail->addAddress(<?php echo $user['email']; ?>); //'receiver1@gfg.com'
         $mail->addAddress('receiver2@gfg.com', 'Name');
-        
+ 
+                // /// Get get recipients email address from database using id
+                // $id= (int) $_GET["id"];
+                // $result = mysqli_query($conx, "SELECT email from mytable where id='$id'");
+                // $row = mysqli_fetch_array($result);
+                // $to = $row["email"];
+
+
+    if ($_GET["submit"]) {  
+        $name =  htmlspecialchars($_GET['name']);
+        $email = htmlspecialchars($_GET['email']);
+        $message = $_GET['message'];
+        $subject = 'Hello There';
+        $body = "E-Mail: $email\n Message: $message";
+        if (mail($to, $subject, $body)) {
+
+        $result='<div class="alert alert-success">Your email has been sent</div>';
+             }else{
+        $result='<div class="alert alert-danger">Sorry there was an error sending your message.</div>';
+    }
+}
+?> 
+
+
+
         $mail->isHTML(true);                                  
         $mail->Subject = 'Lorem Ipsum';
         $mail->Body    = 'HTML message body in <b>bold</b> ';

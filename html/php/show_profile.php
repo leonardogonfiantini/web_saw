@@ -35,8 +35,8 @@
 		
 
 
-		//$query=mysqli_query($db,"SELECT * FROM users where user_id='$id'")or die(mysqli_error());
-		//$row=mysqli_fetch_array($query);
+		// $query=mysqli_query($db,"SELECT * FROM users where user_id='$id'")or die(mysqli_error());
+		// $row=mysqli_fetch_array($query);
 
 	?>
 
