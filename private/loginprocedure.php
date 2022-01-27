@@ -18,7 +18,7 @@
             $mysqli->close();
             $result->close();
             echo "[login ok]";
-            header("Location: homepage.php");
+            header("Location: show_profile.php");
         }
     } 
     
