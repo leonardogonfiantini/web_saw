@@ -10,34 +10,48 @@
 </head>
 <body>
   <?php
+    require('database.php');
     session_start();
-    $db = mysqli_connect("localhost","enrico","123","users")// temp
-		  or die ('Unable to connect. Check your connection parameters.');
-    $id = $_SESSION['ID'];
 
-    if(isset($_POST['Submit Changes'])){ // Determine if a variable is declared and is different than null
+    if(isset($_POST['submit_profile'])){ // Determine if a variable is declared and is different than null
+      $firstname = $_POST['firstname'];
+      $lastname['lastname'];
+      $img = $_POST['img'];
+      $bio = $_POST['bio'];
       $email = $_POST['email'];
-      $pass = $_POST['pass'];
-      $biografia = $_POST['biografia'];
-      $nome = $_POST['nome'];
-      $cognome = $_POST['cognome'];
       $newsletter = $_POST['newsletter'];
-      $query = "UPDATE users SET nome = '$nome',
-                                 cognome = '$cognome', 
-                                 email = $email,
-                                 pass = $pass,
-                                 biografia = $biografia, 
-                                 newsletter = '$newsletter'
-                                 WHERE email = '$id'";
-      $result = mysqli_query($db, $query) or die(mysqli_error($db));
-    }
-    
-    if($result)
-      echo "<h3>Profile's edited successful!</h3>";
-    else
-      echo "<h3>Something went wrong, retry...</h3>";
+      $table = "userdata";
 
-      header("Refresh:2; profile.php");
+      $result = $mysqli->prepare("SELECT id FROM userdata WHERE email LIKE ?");
+      $result->bind_param("s", $email);
+      $result->execute();
+      $result->store_result();
+      $result->bind_result($idrow);
+      $rows = $result->num_rows;
+      $result->fetch();
+
+      if($rows==0 || $idrow==$_SESSION['id']){
+        $result = $mysqli->prepare("UPDATE $table SET firstname=?, lastname=?, email=?, bio=?, img=?, newsletter=? WHERE id = ?");
+        $result->bind_param('sssssii', $firstname, $lastname, $email, $bio, $img, $newsletter, $_SESSION['id']);
+        $result->execute();
+        echo "<h3>Dati aggiornati correttamente!</h3>";
+      }
+      else{
+        echo "<h3>Email già esistente!</h3>";
+
+      }
+
+      
+    }
+
+
+
+
+    
+
+
+    
+    header("Header: show_profile.php");
   ?>
 </body>
 </html>

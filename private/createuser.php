@@ -12,7 +12,10 @@
                             lastname varchar(255) NOT NULL,
                             email varchar(255) NOT NULL,
                             passwordd varchar(255) NOT NULL,
-                            PRIMARY KEY  (ID) 
+                            bio varchar(150) not NULL,
+                            img varchar(255) not NULL,
+                            newsletter boolean not NULL,
+                            PRIMARY KEY (ID) 
                             )");
         }
     }
@@ -31,8 +34,11 @@
         $result->close();
         header("Location: registration.php");
     } else {
-        $result = $mysqli->prepare("INSERT INTO userdata (firstname, lastname, email, passwordd) VALUES (?, ?, ?, ?)");
-        $result->bind_param('ssss', $_POST['firstname'], $_POST['lastname'], $_POST['email'], $cyphpasswd);
+        $init_img = "https://e7.pngegg.com/pngimages/355/848/png-clipart-computer-icons-user-profile-google-account-s-icon-account-miscellaneous-sphere-thumbnail.png";
+        $init_bio = "nessuna bio inserita";
+        $init_newsletter = true;
+        $result = $mysqli->prepare("INSERT INTO userdata (firstname, lastname, email, passwordd, bio, img, newsletter) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $result->bind_param('ssssssi', $_POST['firstname'], $_POST['lastname'], $_POST['email'], $cyphpasswd, $init_bio, $init_img, $init_newsletter);
         $result->execute();
         $mysqli->close();
         $result->close();

@@ -1,17 +1,4 @@
 <?php
-// Enter your Host, username, password, database below.
-// I left password empty because i do not set password on localhost.
-$con = mysqli_connect('localhost', 'S4545114', 'sugovoltri', 'S4545114'); //tanto poi bisogna sistemare
-// Check connection
-if (mysqli_connect_errno()){
-  echo "Errore nella connessione con il database: " . mysqli_connect_error();
-  }
-
-
-
-// local test enri
-// $con = mysqli_connect('localhost', 'enrico', '123', 'users'); // temp
-// // Check connection
-// if (mysqli_connect_errno())
-//   echo "Errore nella connessione con il database: " . mysqli_connect_error();
+  mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //error reporting for mysql server
+  $mysqli = mysqli_connect('localhost', 'root', '1234', 'dbUtenti');
 ?>
