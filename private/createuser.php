@@ -12,6 +12,9 @@
                             lastname varchar(255) NOT NULL,
                             email varchar(255) NOT NULL,
                             passwordd varchar(255) NOT NULL,
+                            bio varchar(255) DEFAULT NULL,
+                            img varchar(255) DEFAULT NULL,
+                            newsletter bit DEFAULT NULL,
                             PRIMARY KEY  (ID) 
                             )");
         }

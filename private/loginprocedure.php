@@ -13,7 +13,6 @@
         $result->fetch(); 
         if (password_verify($_POST['pass'], $passwordrow)) {
             session_start();
-            $_SESSION['authorized'] = "yes";
             $_SESSION['id'] = $idrow;
             $mysqli->close();
             $result->close();
