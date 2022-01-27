@@ -12,23 +12,10 @@
                             lastname varchar(255) NOT NULL,
                             email varchar(255) NOT NULL,
                             passwordd varchar(255) NOT NULL,
-<<<<<<< HEAD
                             bio varchar(150) NOT NULL,
                             img varchar(255) NOT NULL,
                             newsletter char(3) NOT NULL,
-=======
-<<<<<<< HEAD
-                            bio varchar(255) DEFAULT NULL,
-                            img varchar(255) DEFAULT NULL,
-                            newsletter bit DEFAULT NULL,
-                            PRIMARY KEY  (ID) 
-=======
-                            bio varchar(150) not NULL,
-                            img varchar(255) not NULL,
-                            newsletter boolean not NULL,
->>>>>>> e1286c15e193c19a9b58b13d52fdfdadf37ebabb
                             PRIMARY KEY (ID) 
->>>>>>> 120bec0b45fef6cf500258c890f359b3c6ad88c6
                             )");
         }
     }
