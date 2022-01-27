@@ -8,7 +8,7 @@
 // per cronologia ordini è necessario questo blocco?
     if ($result = $mysqli->query("SHOW TABLES LIKE '".$table."'")) {
         if($result->num_rows == 0) {
-            $mysqli->query("CREATE TABLE products (
+            $mysqli->query("CREATE TABLE orders (
                             id int(11) AUTO_INCREMENT,
                             nameproduct varchar(255) NOT NULL,
                             img varchar(255) NOT NULL,
@@ -29,9 +29,9 @@
     while ($row = mysqli_fetch_array($result)) {
         $counter = 0;
 
-        echo "<div class=products style="."margin-top:".($margin*40)."%>";
+        echo "<div class=profile_products style="."margin-top:".($margin*40)."%>";
             
-            echo "<div class=card>";
+            echo "<div class=profile_card>";
                 echo "<img src=".$row['img']." type=img>";
                 echo "<p>".$row['descr']."</p>";
                 echo "<button id=".$row['nameproduct']."-btncart name=".$row['nameproduct']." value=".$row['price']." type=submit> Order Now </button>";
@@ -39,9 +39,9 @@
 
             $row = mysqli_fetch_array($result);
             if ($row == NULL) break;
-            echo "<div class=divisor></div>";
+            echo "<div class=profile_divisor></div>";
 
-            echo "<div class=card>";
+            echo "<div class=profile_card>";
                 echo "<img src=".$row['img']." type=img>";
                 echo "<p>".$row['descr']."</p>";
                 echo "<button id=".$row['nameproduct']."-btncart name=".$row['nameproduct']." value=".$row['price']." type=submit> Order Now </button>";
@@ -50,8 +50,8 @@
             $row = mysqli_fetch_array($result);
             if ($row == NULL) break;
 
-            echo "<div class=divisor></div>";
-                echo "<div class=card>";
+            echo "<div class=profile_divisor></div>";
+                echo "<div class=profile_card>";
                 echo "<img src=".$row['img']." type=img>";
                 echo "<p>".$row['descr']."</p>";
                 echo "<button id=".$row['nameproduct']."-btncart name=".$row['nameproduct']." value=".$row['price']." type=submit> Order Now </button>";

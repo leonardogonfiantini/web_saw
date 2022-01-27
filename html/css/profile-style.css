@@ -11,6 +11,9 @@ body{
   background-repeat: no-repeat;
   /* background-size: cover; */
   color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* max-width: 100%; */
+  height: 200%;
 }
 /* start profile card */
 #user_img{ /* my image-style */
@@ -159,11 +162,80 @@ input[type=checkbox]{
   text-align: center;
 }
 
-/* #user-box{
-	background: rgb(40, 24, 119);
-  float: center;
-  height: 90%;
-  opacity: 0.85;
+/* css per orders.php e wishlist.php */
+.profile_products {
+  position: absolute;
+  width:100%;
+  height:100%;
+  top: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_divisor {
+  position:relative;
+  width:9%;
+}
+
+
+.profile_card {
+  float: left;
+  position:relative;
+  width: 20%;
+  height: 60%;
+  border-radius: 3vh;
+  background-color: white;
+  box-shadow: 0 2px 2px 0 black;
+  border: 2px solid black;
+  z-index: 3;
+  transition: 1s ease;
+  overflow: hidden;
+}
+
+.profile_card:hover {
+  transform: scale(1.1);
+}
+
+
+.profile_card img {
+  position:relative;
+  top:0;
+  left:0;
+  object-fit: cover;
   width: 100%;
-  text-align: center;
-} */
+  height:45%;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+}
+
+.profile_card p {
+  position:absolute;
+  color: black;
+  font-size: 2vh;
+  top:50%;
+  width:90%;
+  margin-left: 2%;
+  text-align:center;
+  z-index:4;
+}
+
+
+.profile_card button {
+  width:50%;
+  height:10%;
+  position:absolute;
+  bottom:7%;
+  left:24%;
+  border-radius: 10vh;
+  background-color: rgb(156, 56, 56);
+  color:white;
+  font-size: 2vh;
+  border:0;
+  box-shadow: 0 2px 2px 0 black;
+  transition: 0.5s ease;
+}
+
+.profile_card button:hover {
+  background-color: rgb(201, 57, 57);  
+}
