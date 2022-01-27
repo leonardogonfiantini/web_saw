@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> <?php echo $user['nome']; ?> </title>
+  <title> <?php echo $user['firstname']; ?> </title>
   <link rel="stylesheet" type="text/css" href="../css/profile-style.css">
 </head>
 <body>
@@ -15,11 +15,14 @@
 
     if(isset($_POST['submit_profile'])){ // Determine if a variable is declared and is different than null
       $firstname = $_POST['firstname'];
-      $lastname['lastname'];
+      $lastname = $_POST['lastname'];
       $img = $_POST['img'];
-      $bio = $_POST['bio'];
+      $bio = $_POST['biografia'];
       $email = $_POST['email'];
-      $newsletter = $_POST['newsletter'];
+      if(isset($_POST['newsletter']))
+        $newsletter = "on";
+      else
+        $newsletter = "off";
       $table = "userdata";
 
       $result = $mysqli->prepare("SELECT id FROM userdata WHERE email LIKE ?");
@@ -32,7 +35,7 @@
 
       if($rows==0 || $idrow==$_SESSION['id']){
         $result = $mysqli->prepare("UPDATE $table SET firstname=?, lastname=?, email=?, bio=?, img=?, newsletter=? WHERE id = ?");
-        $result->bind_param('sssssii', $firstname, $lastname, $email, $bio, $img, $newsletter, $_SESSION['id']);
+        $result->bind_param('ssssssi', $firstname, $lastname, $email, $bio, $img, $newsletter, $_SESSION['id']);
         $result->execute();
         echo "<h3>Dati aggiornati correttamente!</h3>";
       }
@@ -40,8 +43,6 @@
         echo "<h3>Email già esistente!</h3>";
 
       }
-
-      
     }
 
 
@@ -51,7 +52,7 @@
 
 
     
-    header("Header: show_profile.php");
+    header("Location: show_profile.php");
   ?>
 </body>
 </html>

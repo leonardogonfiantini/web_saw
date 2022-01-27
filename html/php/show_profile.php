@@ -31,7 +31,7 @@
 
 	?>
 <head>
-	<title> <?php echo $user['nome']; ?> </title>
+	<title> <?php echo $user['firstname']; ?> </title>
 	<link rel="stylesheet" type="text/css" href="../css/profile-style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<?php 
@@ -99,31 +99,31 @@
 		<section id="edit">	
 			<form action="update_profile.php" method="POST">
 				<label for="firstname"><h4>Nome</h4></label>
-				<input type="text" id="firstname" value="<?php echo $user['firstname']; ?>">
+				<input type="text" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>">
 
 				<label for="lastname"><h4>Cognome</h4></label>
-				<input type="text" id="lastname" value="<?php echo $user['lastname']; ?>">
+				<input type="text" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>">
 
 				<label for="img"><h4>Indirizzo URL della foto profilo</h4></label>
-				<input type="text" id="img" value="<?php echo $user['img']; ?>">
+				<input type="text" id="img" name="img" value="<?php echo $user['img']; ?>">
 
 				<label for="bio"><h4>Biografia</h4></label>
-				<input type="text" id="biografia" value="<?php echo $user['biografia']; ?>">
+				<input type="text" id="biografia" name="biografia" value="<?php echo $user['bio']; ?>">
 
 				<label for="email"><h4>Email</h4></label>
-				<input type="email" id="email" value="<?php echo $user['email']; ?>" required><br>
+				<input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" required><br>
 
-				<input type="checkbox" id="newsletter"> Vuoi ricevere la nostra newsletter? </input><br>
+				<input type="checkbox" id="newsletter" name="newsletter" <?php if($user['newsletter']=="on") echo "checked";?>> Vuoi ricevere la nostra newsletter? </input><br>
 				
-				<input id="submit_profile" type="submit" value="Submit Changes">
+				<input id="submit_profile" name="submit_profile" type="submit" value="Submit Changes">
 			</form>
-			<form action="update_password.php" style="margin: 10%">
+			<form action="update_password.php" method="POST" style="margin: 10%">
 				<label for="pass_o"><h4>Password</h4></label>
-				<input type="password" id="old" placeholder="Old password..." required><br>
-				<input type="password" id="new" placeholder="New password..." required>
-				<input type="password" id="confirm" placeholder="Confirm new password..." required><br>
+				<input type="password" id="old" name="old" placeholder="Old password..." required><br>
+				<input type="password" id="new" name="new" placeholder="New password..." required>
+				<input type="password" id="confirm" name="confirm" placeholder="Confirm new password..." required><br>
 
-				<input id="submit_password" type="submit" value="Cambia password">
+				<input id="submit_password" name="submit_password" type="submit" value="Cambia password">
 			</form>
 		</section>
 

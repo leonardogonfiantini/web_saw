@@ -1,10 +1,9 @@
 <?php
+    require('database.php');
     session_start();
-    $db = mysqli_connect("localhost","enrico","123","users")// temp
-		or die ('Unable to connect. Check your connection parameters.');
 
     // sono necessari da fare ogni volta?
-    $stmt = $con->prepare("SELECT nome, email FROM users WHERE email = ?");
+    $stmt = $mysqli->prepare("SELECT firstname, lastname FROM userdata WHERE email = ?");
     $stmt->bind_param('s', $_SESSION['ID']);
     $stmt->execute();
     $res = $stmt->get_result();
@@ -13,7 +12,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     
-    require 'vendor/autoload.php'; // :)
+    // require 'vendor/autoload.php'; // :)
     
     $mail = new PHPMailer(true);
     
@@ -28,8 +27,8 @@
         $mail->Port       = 465;                // TCP port to connect to
 
         $mail->setFrom('timetravel.unige@gmail.com', 'TimeTravel');
-        $mail->addAddress($user['email']);
-        $mail->addAddress($user['email'], $user['nome']);
+        $mail->addAddress('lp.gonfiantini@gmail.com');
+        // $mail->addAddress($user['email'], $user['nome']);
         $mail->addAttachment("../img/shop/back-shop.jpg"); // immagine a caso
 
         $mail->isHTML(true); // If passed true, sets the email format to HTML.                 
