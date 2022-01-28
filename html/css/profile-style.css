@@ -111,7 +111,7 @@ body{
 
 #menu{
   display: flex;
-  width: 95%;
+  width: 97.5%;
 }
 
 #anteprima{
@@ -162,7 +162,7 @@ input[type=checkbox]{
   text-align: center;
 }
 
-/* css per orders.php e wishlist.php */
+/* css per orders.php */
 .profile_products {
   position: absolute;
   width:100%;

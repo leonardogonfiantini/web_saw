@@ -19,7 +19,7 @@
 				//kill page because user is not logged in and is waiting for redirection
 				die();
 			}
-			echo "<h3>Welcome to the member's area, " . $_SESSION['id'] . "!</h3>";
+			// echo "<h3>Welcome to the member's area, " . $_SESSION['id'] . "!</h3>";
 	
 
 			// preparo variabili per le info dell'utente
@@ -85,15 +85,7 @@
 		</section>
 
 		<section id="viaggi">
-			<!-- <h2> Clicca un bottone! </h2> -->
-			<!-- <button> Ordini </button>
-			<button> Wishlist </button> -->
-			<div id="orders">
-				<?php include("../private/orders.php"); ?>
-			</div>
-			<!-- <div id="wishlist">
-				<?php include("../private/wishlist.php"); ?>
-			</div> -->
+			<?php include("../../private/orders.php");?>
 		</section>
 
 		<section id="edit">	
