@@ -3,18 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body{
   background-color: rgb(23, 13, 70);
   background-image: url("../img/background3.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: cover; */
   color: white;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* max-width: 100%; */
   height: 200%;
 }
+
 /* start profile card */
 #user_img{ /* my image-style */
   display: block;
@@ -84,8 +82,6 @@ body{
   border-radius: 5%;
   color: white;
   display: inline-block;
-  /* opacity: 0.85; */
-  /* padding: 95px; */
   position: absolute;
   top: 15%;
   right: 2%;
@@ -108,6 +104,36 @@ body{
   background-color: white;
   color: black;
 }
+.info input[type=submit]{
+	background-color: rgb(40, 24, 119);
+  border: 0;
+  border-radius: 4vh;
+  color: white;
+  cursor: pointer;
+	padding: 1.5% 4%;
+}
+.info input[type=submit]:hover{
+  border: 0;
+  background-color: white;
+  color: black;
+}
+.info input[type=text], input[type=email], input[type=password]{
+  border: 0;
+	border-radius: 3vh;
+  margin-bottom: 2%;
+  padding: 1.5% 4.5%;
+}
+.info input[type=checkbox]{
+  margin-bottom: 2%;
+}
+/* #info button{
+  background-color: rgb(40, 24, 119);
+  border: 0;
+  border-radius: 3vh;
+  color: white;
+  cursor: pointer;
+	padding: 1.5% 4.5%;
+} */
 
 #menu{
   display: flex;
@@ -115,7 +141,7 @@ body{
 }
 
 #anteprima{
-  display: block; 
+  display: none; 
 }
 #acquisti{
   display: none;
@@ -123,122 +149,11 @@ body{
 }
 #edit{
   color: white;
-  display: none;
+  display: block;
   margin-top: 2%;
   text-align: center;
 }
-
-
-.info input[type=submit]{
-	background-color: rgb(40, 24, 119);
-  border: 0;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
-	padding: 20px 60px;
-}
-.info input[type=submit]:hover{
-  background-color: white;
-  color: black;
-}
-.info input[type=text], input[type=email], input[type=password]{
-	/* border: 0; */
-  width:30%;
-	border-radius: 20px;
-  margin-bottom: 2%;
-  padding: 20px 60px;
-}
-.info input[type=checkbox]{
-  margin-bottom: 2%;
-}
-#info button{
-  background-color: rgb(40, 24, 119);
-  border: 0;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
-	padding: 20px 60px;
-}
-
 #logout{
   display: none;
   text-align: center;
-}
-
-/* css per orders.php */
-.profile_products {
-  position: absolute;
-  width:100%;
-  height:100%;
-  top: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile_divisor {
-  position:relative;
-  width:9%;
-}
-
-
-.profile_card {
-  float: left;
-  position:relative;
-  width: 20%;
-  height: 60%;
-  border-radius: 3vh;
-  background-color: white;
-  box-shadow: 0 2px 2px 0 black;
-  border: 2px solid black;
-  z-index: 3;
-  transition: 1s ease;
-  overflow: hidden;
-}
-
-.profile_card:hover {
-  transform: scale(1.1);
-}
-
-
-.profile_card img {
-  position:relative;
-  top:0;
-  left:0;
-  object-fit: cover;
-  width: 100%;
-  height:45%;
-  border-bottom: 1px solid black;
-  overflow: hidden;
-}
-
-.profile_card p {
-  position:absolute;
-  color: black;
-  font-size: 2vh;
-  top:50%;
-  width:90%;
-  margin-left: 2%;
-  text-align:center;
-  z-index:4;
-}
-
-
-.profile_card button {
-  width:50%;
-  height:10%;
-  position:absolute;
-  bottom:7%;
-  left:24%;
-  border-radius: 10vh;
-  background-color: rgb(156, 56, 56);
-  color:white;
-  font-size: 2vh;
-  border:0;
-  box-shadow: 0 2px 2px 0 black;
-  transition: 0.5s ease;
-}
-
-.profile_card button:hover {
-  background-color: rgb(201, 57, 57);  
 }

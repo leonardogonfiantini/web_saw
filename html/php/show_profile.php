@@ -52,7 +52,7 @@
 			<a href="https://it.linkedin.com"><i class="fa fa-linkedin"></i></a>  
 			<a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a> 
 		</div>
-		<p><button>Contact</button></p>
+		<p><button onclick="support()">Contact Support</button></p>
 	</div>
 
 	<div id="info" class="info">
@@ -157,6 +157,9 @@
 				default:
 					alert("javascript error!");
 			}
+		}
+		function support(){
+			alert("Chiamaci al numero 1234567890 :)");
 		}
 
 	 	//script che tiene fermo il menù
