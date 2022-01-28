@@ -2,7 +2,6 @@
 
     session_start();
 
-
     echo "<h2 style=margin-top:3%> Hai acquistato: </h2>";
 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //error reporting for mysql server

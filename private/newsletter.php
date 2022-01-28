@@ -1,5 +1,9 @@
 <?php
-    require('database.php');
+    require('../html/php/database.php');
+    
+    session_start();
+
+    // sono necessari da fare ogni volta?
     $on = "on";
     $stmt = $mysqli->prepare("SELECT email FROM userdata WHERE newsletter LIKE ?");
     $stmt->bind_param("s", $on);
@@ -13,7 +17,6 @@
     require '../vendor/autoload.php'; // :)
     
     $mail = new PHPMailer(true);
-    
     try {
         $mail->SMTPDebug = 2;                   // Enable verbose debug output
         $mail->isSMTP();                        // Set mailer to use SMTP
@@ -34,13 +37,15 @@
 
         $mail->isHTML(true); // If passed true, sets the email format to HTML.                 
         $mail->Subject = 'Lorem Ipsum';
-        $mail->Body    = "<img src=https://wallpaperaccess.com/full/3118845.jpg> 
-                        <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit.  Obcaecati neque quasi hic cum eum illum minus!  aut ipsa quasi sint officia saepe fugiat, nihil eius. Sint vero adipisci quaerat perspiciatis ad commodi repellat illo, cupiditate quasi. Illum?</b></p>";
-        $mail->AltBody = "Lorem ipsum dolor sit amet consectetur adipisicing elit.  Obcaecati neque quasi hic cum eum illum minus!  aut ipsa quasi sint officia saepe fugiat, nihil eius. Sint vero adipisci quaerat perspiciatis ad commodi repellat illo, cupiditate quasi. Illum?"; //Body in plain text for non-HTML mail clients
+        $img = "<img src=https://cdn.2kgames.com/civilization.com/2KGMKT_CivilizationVI-GS_Key-Art_Wide_THM.jpg>";
+        $mail->Body = $img.$_GET['text'];
+        $mail->AltBody = $_GET['text'];
         $mail->send();
         echo "<h3>Email inviata correttamente!</h3>";
     }
     catch (Exception $e) {
         echo "<h3>Email non mandata. Errore mailer: {$mail->ErrorInfo}</h3>";
+        echo $_POST['text'];
     }
+
 ?>
