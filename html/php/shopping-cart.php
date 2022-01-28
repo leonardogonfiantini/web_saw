@@ -3,9 +3,6 @@
 
 <link rel="stylesheet" type="text/css" href="../css/shopping-cart-style.css">
 
-<?php include("../../private/createdbcart.php") ?>
-
-
 <head> <title> Shopping-cart </title> </head>
 
 
