@@ -38,7 +38,7 @@ body{
     border: 4px;
     border-radius: 5%;
     color: white;
-    display: inline-block;  /* <-- */
+    display: inline-block;  /* <--- */
     left: 2%;
     /* float: left; */
     max-width: 300px;
