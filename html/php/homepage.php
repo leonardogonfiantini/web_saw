@@ -130,16 +130,16 @@
                         <h1> Da Baby </h1>
                         <h2> css master </h2>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, velit? Lorem ipsum dolor sit. </p>
-                        <a href="homepage.php"> <div class="icon"> 
+                        <a href="https://www.instagram.com"> <div class="icon"> 
                             <img src="../img/social/instagram.png" type="img" width="50%" height="50%">
                         </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:10%"> 
+                        <a href="https://www.facebook.com"> <div class="icon" style="margin-left:10%"> 
                             <img src="../img/social/facebook.png" type="img" width="50%" height="50%">
                         </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:20%"> 
+                        <a href="https://www.twitter.com"> <div class="icon" style="margin-left:20%"> 
                             <img src="../img/social/twitter.png" type="img" width="50%" height="50%">
                         </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:30%"> 
+                        <a href="https://it.linkedin.com"> <div class="icon" style="margin-left:30%"> 
                             <img src="../img/social/linkedin.png" type="img" width="50%" height="50%">
                         </div></a>
                     </div>
@@ -149,16 +149,16 @@
                         <h1> Da Baby </h1>
                         <h2> css master </h2>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, velit? Lorem ipsum dolor sit amet consectetur. </p>
-                        <a href="homepage.php"> <div class="icon"> 
+                        <a href="https://www.instagram.com"> <div class="icon"> 
                             <img src="../img/social/instagram.png" type="img" width="50%" height="50%">
                         </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:10%"> 
+                        <a href="https://www.facebook.com"> <div class="icon" style="margin-left:10%"> 
                             <img src="../img/social/facebook.png" type="img" width="50%" height="50%">
                         </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:20%"> 
+                        <a href="https://www.twitter.com"> <div class="icon" style="margin-left:20%"> 
                             <img src="../img/social/twitter.png" type="img" width="50%" height="50%">
                         </div></a>
-                        <a href="homepage.php"> <div class="icon" style="margin-left:30%"> 
+                        <a href="https://it.linkedin.com"> <div class="icon" style="margin-left:30%"> 
                             <img src="../img/social/linkedin.png" type="img" width="50%" height="50%">
                         </div></a>
                     </div>

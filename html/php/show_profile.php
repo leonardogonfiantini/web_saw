@@ -47,10 +47,10 @@
 		<p class="title">CEO & Founder, Example</p>
 		<p>Harvard University</p>
 		<div style="margin: 24px 0;">
-			<a href="#"><i class="fa fa-dribbble"></i></a> <!-- icone dei social prese dal link -->
-			<a href="#"><i class="fa fa-twitter"></i></a>  
-			<a href="#"><i class="fa fa-linkedin"></i></a>  
-			<a href="#"><i class="fa fa-facebook"></i></a> 
+			<a href="https://dribbble.com"><i class="fa fa-dribbble"></i></a> <!-- icone dei social prese dal link -->
+			<a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>  
+			<a href="https://it.linkedin.com"><i class="fa fa-linkedin"></i></a>  
+			<a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a> 
 		</div>
 		<p><button>Contact</button></p>
 	</div>
