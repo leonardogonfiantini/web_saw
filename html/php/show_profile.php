@@ -58,7 +58,7 @@
 	<div id="info" class="info">
 		<div id="menu">
 			<a href="#" onclick="dispetti(1)" style="border-top-left-radius: 25%"> Anteprima </a>
-			<a href="#" onclick="dispetti(2)"> Viaggi </a>
+			<a href="#" onclick="dispetti(2)"> Acquisti </a>
 			<a href="#" onclick="dispetti(3)"> Modifica </a>
 			<a href="#" onclick="dispetti(4)" style="border-top-right-radius: 25%"> Logout </a>
 		</div>
@@ -84,7 +84,7 @@
 				?></h3><br>
 		</section>
 
-		<section id="viaggi">
+		<section id="acquisti">
 			<?php include("../../private/orders.php");?>
 		</section>
 
@@ -132,25 +132,25 @@
 			switch (a) {
 				case 1: //anteprima
 					document.getElementById("anteprima").style.display="block";
-					document.getElementById("viaggi").style.display="none";
+					document.getElementById("acquisti").style.display="none";
 					document.getElementById("edit").style.display="none";
 					document.getElementById("logout").style.display="none";
 					break;
-				case 2: //viaggi
+				case 2: //acquisti
 					document.getElementById("anteprima").style.display="none";
-					document.getElementById("viaggi").style.display="block";
+					document.getElementById("acquisti").style.display="block";
 					document.getElementById("edit").style.display="none";
 					document.getElementById("logout").style.display="none";
 					break;
 				case 3: //edit
 					document.getElementById("anteprima").style.display="none";
-					document.getElementById("viaggi").style.display="none";
+					document.getElementById("acquisti").style.display="none";
 					document.getElementById("edit").style.display="block";
 					document.getElementById("logout").style.display="none";
 					break;
 				case 4: //logout
 					document.getElementById("anteprima").style.display="none";
-					document.getElementById("viaggi").style.display="none";
+					document.getElementById("acquisti").style.display="none";
 					document.getElementById("edit").style.display="none";
 					document.getElementById("logout").style.display="block";
 					break;
