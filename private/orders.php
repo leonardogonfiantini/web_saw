@@ -1,26 +1,8 @@
-<!-- fac-simile createcards.php -->
 <?php
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //error reporting for mysql server
     require('database.php');
 
-    $table = "orders"; // :)
-
-// per cronologia ordini è necessario questo blocco?
-    if ($result = $mysqli->query("SHOW TABLES LIKE '".$table."'")) {
-        if($result->num_rows == 0) {
-            $mysqli->query("CREATE TABLE orders (
-                            id int(11) AUTO_INCREMENT,
-                            nameproduct varchar(255) NOT NULL,
-                            img varchar(255) NOT NULL,
-                            descr varchar(255) NOT NULL,
-                            price int NOT NULL,
-                            UserID int (11) NOT NULL,
-                            PRIMARY KEY  (ID),
-                            FOREIGN KEY (UserID) REFERENCES users(email)
-                            )");
-        }
-    }
-
+    
 
     $result = $mysqli->query("SELECT * FROM $table WHERE user=?");
     bind_param('s', $_SESSION['ID']); // riesce a prendere l'id??
@@ -65,4 +47,4 @@
 
 
     $result->close();
-?>
+?> 

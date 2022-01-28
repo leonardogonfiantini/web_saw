@@ -109,7 +109,7 @@ if (sessionStorage.getItem("cart-number") != 0) {
                         headers: {
                         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                         },
-                        body: "u=user&p="+sessions[i].slice(0,-10)+"&t="+sessionStorage.getItem(sessions[i])
+                        body: "p="+sessions[i].slice(0,-10)+"&t="+sessionStorage.getItem(sessions[i])
                     })
                 )
             }
