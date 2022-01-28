@@ -55,7 +55,7 @@
 		<p><button>Contact</button></p>
 	</div>
 
-	<div id="info">
+	<div id="info" class="info">
 		<div id="menu">
 			<a href="#" onclick="dispetti(1)" style="border-top-left-radius: 25%"> Anteprima </a>
 			<a href="#" onclick="dispetti(2)"> Viaggi </a>

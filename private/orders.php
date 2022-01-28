@@ -1,42 +1,23 @@
 <?php
-    $result = $mysqli->query("SELECT * FROM orders WHERE user=?");
-    bind_param('i', $_SESSION['id']); // riesce a prendere l'id??
-    
-    // $margin=0;
-    // while ($row = mysqli_fetch_array($result)) {
-    //     $counter = 0;
 
-    //     echo "<div class=profile_products style="."margin-top:".($margin*40)."%>";
-            
-    //         echo "<div class=profile_card>";
-    //             echo "<img src=".$row['img']." type=img>";
-    //             echo "<p>".$row['descr']."</p>";
-    //             echo "<button id=".$row['nameproduct']."-btncart name=".$row['nameproduct']." value=".$row['price']." type=submit> Order Now </button>";
-    //         echo "</div>";
+    session_start();
 
-    //         $row = mysqli_fetch_array($result);
-    //         if ($row == NULL) break;
-    //         echo "<div class=profile_divisor></div>";
 
-    //         echo "<div class=profile_card>";
-    //             echo "<img src=".$row['img']." type=img>";
-    //             echo "<p>".$row['descr']."</p>";
-    //             echo "<button id=".$row['nameproduct']."-btncart name=".$row['nameproduct']." value=".$row['price']." type=submit> Order Now </button>";
-    //         echo "</div>";
-            
-    //         $row = mysqli_fetch_array($result);
-    //         if ($row == NULL) break;
+    echo "<h2 style=margin-top:3%> Hai acquistato: </h2>";
 
-    //         echo "<div class=profile_divisor></div>";
-    //             echo "<div class=profile_card>";
-    //             echo "<img src=".$row['img']." type=img>";
-    //             echo "<p>".$row['descr']."</p>";
-    //             echo "<button id=".$row['nameproduct']."-btncart name=".$row['nameproduct']." value=".$row['price']." type=submit> Order Now </button>";
-    //         echo "</div>";
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //error reporting for mysql server
+    $mysqli = mysqli_connect('localhost', 'root', '1234', 'dbUtenti');
 
-    //     echo "</div>";
+    $result = $mysqli->prepare("SELECT product, SUM(trips) FROM orders WHERE user=? GROUP BY product");
+    $result->bind_param('i', $_SESSION['id']); 
+    $result->execute();
+    $result->store_result();
+    $result->bind_result($product, $trips); 
 
-    //     $margin++;
-    // }
-    // $result->close();
+    $margin=3;
+    while ($result->fetch()) {
+        echo "<p style=margin-top:".$margin."%>".$product." x".$trips."</p>";
+    }
+
+    $result->close();
 ?> 
