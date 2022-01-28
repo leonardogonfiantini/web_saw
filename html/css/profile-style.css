@@ -11,6 +11,7 @@ body{
   color: white;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 200%;
+  max-width: 100%;
 }
 
 /* start profile card */
@@ -126,22 +127,14 @@ body{
 .info input[type=checkbox]{
   margin-bottom: 2%;
 }
-/* #info button{
-  background-color: rgb(40, 24, 119);
-  border: 0;
-  border-radius: 3vh;
-  color: white;
-  cursor: pointer;
-	padding: 1.5% 4.5%;
-} */
 
 #menu{
   display: flex;
-  width: 97.5%;
+  width: 96.5%;
 }
 
 #anteprima{
-  display: none; 
+  display: block; 
 }
 #acquisti{
   display: none;
@@ -149,7 +142,7 @@ body{
 }
 #edit{
   color: white;
-  display: block;
+  display: none;
   margin-top: 2%;
   text-align: center;
 }

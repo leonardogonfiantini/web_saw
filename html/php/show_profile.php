@@ -57,10 +57,10 @@
 
 	<div id="info" class="info">
 		<div id="menu">
-			<a href="#" onclick="dispetti(1)" style="border-top-left-radius: 25%"> Anteprima </a>
+			<a href="#" onclick="dispetti(1)" style="border-top-left-radius: 4vh"> Anteprima </a>
 			<a href="#" onclick="dispetti(2)"> Acquisti </a>
 			<a href="#" onclick="dispetti(3)"> Modifica </a>
-			<a href="#" onclick="dispetti(4)" style="border-top-right-radius: 25%"> Logout </a>
+			<a href="#" onclick="dispetti(4)" style="border-top-right-radius: 4vh"> Logout </a>
 		</div>
 
 		<section id="anteprima">
