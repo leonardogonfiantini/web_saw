@@ -12,14 +12,14 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     
-    // require 'vendor/autoload.php'; // :)
+    require '../../vendor/autoload.php'; // :)
     
     $mail = new PHPMailer(true);
     
     try {
         $mail->SMTPDebug = 2;                   // Enable verbose debug output
         $mail->isSMTP();                        // Set mailer to use SMTP
-        $mail->Host       = 'smtp.gmail.com;';    // Specify main SMTP server
+        $mail->Host       = 'ssl://smtp.gmail.com;';    // Specify main SMTP server
         $mail->SMTPAuth   = true;               // Enable SMTP authentication
         $mail->Username   = 'timetravel.unige@gmail.com';
         $mail->Password   = 'lillo-css00';
@@ -29,7 +29,7 @@
         $mail->setFrom('timetravel.unige@gmail.com', 'TimeTravel');
         $mail->addAddress('lp.gonfiantini@gmail.com');
         // $mail->addAddress($user['email'], $user['nome']);
-        $mail->addAttachment("../img/shop/back-shop.jpg"); // immagine a caso
+        //$mail->addAttachment("../img/shop/back-shop.jpg"); // immagine a caso
 
         $mail->isHTML(true); // If passed true, sets the email format to HTML.                 
         $mail->Subject = 'Lorem Ipsum';
@@ -42,7 +42,7 @@
         echo "<h3>Email non mandata. Errore mailer: {$mail->ErrorInfo}</h3>";
     }
 
-
+/*
     // bozza invio all users
     $query = "SELECT email FROM users";
     $recordset = mysql_query($query);
@@ -53,5 +53,5 @@
         $to = $row['email'];
         $mail->AddAddress($to); // add each DB entry to list of recipients
     }
-    //
+    //*/
 ?>
