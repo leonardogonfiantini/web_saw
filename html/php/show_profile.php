@@ -19,7 +19,7 @@
 				//kill page because user is not logged in and is waiting for redirection
 				die();
 			}
-			echo "<h3>Welcome to the member's area, " . $_SESSION['id'] . "!</h3>";
+			// echo "<h3>Welcome to the member's area, " . $_SESSION['id'] . "!</h3>";
 	
 
 			// preparo variabili per le info dell'utente
@@ -85,33 +85,25 @@
 		</section>
 
 		<section id="viaggi">
-			<!-- <h2> Clicca un bottone! </h2> -->
-			<!-- <button> Ordini </button>
-			<button> Wishlist </button> -->
-			<div id="orders">
-				<?php include("../private/orders.php"); ?>
-			</div>
-			<!-- <div id="wishlist">
-				<?php include("../private/wishlist.php"); ?>
-			</div> -->
+			<?php include("../../private/orders.php");?>
 		</section>
 
 		<section id="edit">	
 			<form action="update_profile.php" method="POST">
 				<label for="firstname"><h4>Nome</h4></label>
-				<input type="text" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>">
+				<input type="text" id="firstname" name="firstname" value="<?php echo $user['firstname'];?>">
 
 				<label for="lastname"><h4>Cognome</h4></label>
-				<input type="text" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>">
+				<input type="text" id="lastname" name="lastname" value="<?php echo $user['lastname'];?>">
 
 				<label for="img"><h4>Indirizzo URL della foto profilo</h4></label>
-				<input type="text" id="img" name="img" value="<?php echo $user['img']; ?>">
+				<input type="text" id="img" name="img" value="<?php echo $user['img'];?>">
 
 				<label for="bio"><h4>Biografia</h4></label>
-				<input type="text" id="biografia" name="biografia" value="<?php echo $user['bio']; ?>">
+				<input type="text" id="biografia" name="biografia" value="<?php echo $user['bio'];?>">
 
 				<label for="email"><h4>Email</h4></label>
-				<input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" required><br>
+				<input type="email" id="email" name="email" value="<?php echo $user['email'];?>" required><br>
 
 				<input type="checkbox" id="newsletter" name="newsletter" <?php if($user['newsletter']=="on") echo "checked";?>> Vuoi ricevere la nostra newsletter? </input><br>
 				
