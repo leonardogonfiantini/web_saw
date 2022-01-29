@@ -133,7 +133,8 @@ body{
 }
 
 #anteprima{
-  display: block; 
+  display: block;
+  text-align: center;
 }
 #acquisti{
   display: none;

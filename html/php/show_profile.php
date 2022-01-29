@@ -58,7 +58,6 @@
 		</div>
 
 		<section id="anteprima">
-			<h2> Anteprima </h2>
 			<p>Nome: </p> <h3><?php echo $user['firstname']; ?></h3><br>
 			<p>Cognome: </p> <h3><?php echo $user['lastname']; ?></h3><br>
 			<p>Email: </p> <h3><?php echo $user['email']; ?></h3><br>
