@@ -126,9 +126,9 @@
                 </div>
                 <div class="grid">
                     <div class="profile top-left">
-                        <img src="../img/lillo.jpg" class="bigimg" type="img" width="28%" height="70%">
-                        <h1> Da Baby </h1>
-                        <h2> css master </h2>
+                        <img src="../img/saitama-strength.jpg" class="bigimg" type="img" width="28%" height="70%">
+                        <h1> Leonardo Gonfiantini </h1>
+                        <h2> saitama fan </h2>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, velit? Lorem ipsum dolor sit. </p>
                         <a href="https://www.instagram.com"> <div class="icon"> 
                             <img src="../img/social/instagram.png" type="img" width="50%" height="50%">
@@ -145,7 +145,7 @@
                     </div>
 
                     <div class="profile top-right">
-                        <img src="../img/lillo.jpg" class="bigimg" type="img" width="28%" height="70%">
+                        <img src="../img/enrico.jpeg" class="bigimg" type="img" width="28%" height="70%">
                         <h1> Da Baby </h1>
                         <h2> css master </h2>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, velit? Lorem ipsum dolor sit amet consectetur. </p>

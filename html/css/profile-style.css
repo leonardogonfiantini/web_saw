@@ -5,8 +5,7 @@
 }
 body{
   background-color: rgb(23, 13, 70);
-  background-image: url("../img/background3.jpg");
-  background-position: center;
+  background-image: url("../img/wp3145772-civilization-vi-rise-and-fall-wallpapers.jpg");
   background-repeat: no-repeat;
   color: white;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -87,7 +86,7 @@ body{
   top: 15%;
   right: 2%;
   width: 70%;
-  height: 110%;
+  height: 120%;
 }
 
 #info a {
@@ -126,10 +125,6 @@ body{
 }
 .info input[type=checkbox]{
   margin-bottom: 2%;
-}
-
-#submit{
-  float: right;
 }
 
 #menu{

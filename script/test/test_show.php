@@ -1,4 +1,4 @@
-<?php
+2<?php
 
 function show_logged_user($baseurl) {
 

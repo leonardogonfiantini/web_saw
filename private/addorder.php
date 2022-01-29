@@ -17,7 +17,7 @@
         }
     }
 
-    $result = $mysqli->prepare("INSERT INTO orders (user, product, trips) VALUES (?, ?, ?)");
+    $result = $mysqli->prepare("INSERT INTO orders (userID, product, trips) VALUES (?, ?, ?)");
     $result->bind_param("isi", $_SESSION['id'], $_POST['p'], $_POST['t']);
     $result->execute();
 

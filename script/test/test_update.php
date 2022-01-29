@@ -19,7 +19,7 @@ function update($email, $first_name, $last_name, $baseurl) {
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, "email=$email&firstname=$first_name&lastname=$last_name&submit=submit");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, "email=$email&firstname=$first_name&lastname=$last_name&submitgen=1");
 
     $headers = array();
     $headers[] = 'Content-Type: application/x-www-form-urlencoded';

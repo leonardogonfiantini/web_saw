@@ -13,16 +13,11 @@
     require('database.php');
     session_start();
 
-    if(isset($_POST['submit_profile'])){ // Determine if a variable is declared and is different than null
+    if(isset($_POST['submitgen'])){ // Determine if a variable is declared and is different than null
       $firstname = $_POST['firstname'];
       $lastname = $_POST['lastname'];
-      $img = $_POST['img'];
-      $bio = $_POST['biografia'];
       $email = $_POST['email'];
-      if(isset($_POST['newsletter']))
-        $newsletter = "on";
-      else
-        $newsletter = "off";
+
       $table = "userdata";
 
       $result = $mysqli->prepare("SELECT id FROM userdata WHERE email LIKE ?");
@@ -34,8 +29,8 @@
       $result->fetch();
 
       if($rows==0 || $idrow==$_SESSION['id']){
-        $result = $mysqli->prepare("UPDATE $table SET firstname=?, lastname=?, email=?, bio=?, img=?, newsletter=? WHERE id = ?");
-        $result->bind_param('ssssssi', $firstname, $lastname, $email, $bio, $img, $newsletter, $_SESSION['id']);
+        $result = $mysqli->prepare("UPDATE $table SET firstname=?, lastname=?, email=? WHERE id = ?");
+        $result->bind_param('sssi', $firstname, $lastname, $email, $_SESSION['id']);
         $result->execute();
         echo "<h3>Dati aggiornati correttamente!</h3>";
       }
@@ -45,6 +40,23 @@
       }
     }
 
+
+    if (isset($_POST['submitinfo'])) {
+      $img = $_POST['img'];
+      $bio = $_POST['biografia'];
+      if(isset($_POST['newsletter']))
+        $newsletter = "on";
+      else
+        $newsletter = "off";
+      
+        $table = "userdata";
+        if($rows==0 || $idrow==$_SESSION['id']){
+          $result = $mysqli->prepare("UPDATE $table SET bio=?, img=?, newsletter=? WHERE id = ?");
+          $result->bind_param('sssi', $bio, $img, $newsletter, $_SESSION['id']);
+          $result->execute();
+          echo "<h3>Dati aggiornati correttamente!</h3>";
+        }
+    }
 
 
 

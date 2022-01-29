@@ -10,6 +10,7 @@
                                 id int(11) AUTO_INCREMENT,
                                 nameproduct varchar(255) NOT NULL,
                                 img varchar(255) NOT NULL,
+                                wiki varchar(255) NOT NULL,
                                 descr varchar(255) NOT NULL,
                                 price int NOT NULL,
                                 PRIMARY KEY  (ID) 

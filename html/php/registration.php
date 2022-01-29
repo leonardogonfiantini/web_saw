@@ -31,7 +31,7 @@
         <div class="divright">
             <h1 style="margin-top:15%"> Unisciti a noi! </h1>
 
-            <div> <input type="text" id="firstname" name="firstname" placeholder="Firstname"required > </div>
+            <div> <input type="text" id="firstname" name="firstname" placeholder="Firstname" required > </div>
             <div> <input type="text" id="lastname" name="lastname" placeholder="Lastname" required > </div>
             <div> 
                 <input type="email" id="email" name="email" placeholder="E-mail"required > 

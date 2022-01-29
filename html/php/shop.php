@@ -8,7 +8,14 @@
 
 
     <body>
-        <?php include("navbar.php") ?>
+        <?php 
+            include("navbar.php"); 
+            session_start();
+            if(empty($_SESSION['id'])) {
+                header('Location: pleaselogin.php');
+                die();
+            }
+        ?>
 
         <div class="bigimg"> 
             <img src="../img/shop/back-shop.jpeg" type="img" width="100%" height="100%">

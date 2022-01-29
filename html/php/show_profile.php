@@ -10,13 +10,7 @@
 			//empty does both of the checks you are doing at once
 			//check if user is logged in first
 			if(empty($_SESSION['id'])) {
-
-				//give error and start redirection to login page
-				//you may never see this `echo` because the redirect may happen too fast
-				echo "<h1>Please log in first to see this page.</h1>";
-				header('Refresh:2; homepage.php');
-
-				//kill page because user is not logged in and is waiting for redirection
+				header('Location: pleaselogin.php');
 				die();
 			}
 			// echo "<h3>Welcome to the member's area, " . $_SESSION['id'] . "!</h3>";
@@ -89,6 +83,7 @@
 		</section>
 
 		<section id="edit">	
+
 			<form action="update_profile.php" method="POST">
 				<label for="firstname"><h4>Nome</h4></label>
 				<input type="text" id="firstname" name="firstname" value="<?php echo $user['firstname']; ?>">
@@ -99,19 +94,19 @@
 				<label for="email"><h4>Email</h4></label>
 				<input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" required><br>
 				
-				<input id="submit_profile" name="submit_profile" type="submit" value="Submit Changes">
+				<input id="submitgen" name="submitgen" type="submit" value="Cambia generals">
 			</form>
-			<form action="update_profile.php" method="POST">
+
+			<form action="update_profile.php" method="POST" style="margin-top:5%">
 			<label for="img"><h4>Indirizzo URL della foto profilo</h4></label>
 				<input type="text" id="img" name="img" value="<?php echo $user['img']; ?>">
 
 				<label for="bio"><h4>Biografia</h4></label>
-				<input type="text" id="biografia" name="biografia" value="<?php echo $user['bio']; ?>">
-
+				<input type="text" id="biografia" name="biografia" value="<?php echo $user['bio']; ?>"><br>
 				<input type="checkbox" id="newsletter" name="newsletter" <?php if($user['newsletter']=="on") echo "checked";?>> Vuoi ricevere la nostra newsletter? </input><br>
-
-				<input id="submit" name="submit" type="submit" value="Submit Changes">
+				<input id="submitinfo" name="submitinfo" type="submit" value="Cambia info">
 			</form>
+
 			<form action="update_password.php" method="POST" style="margin: 10%">
 				<label for="pass_o"><h4>Password</h4></label>
 				<input type="password" id="old" name="old" placeholder="Old password..." required><br>
