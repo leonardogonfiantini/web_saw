@@ -96,18 +96,21 @@
 				<label for="lastname"><h4>Cognome</h4></label>
 				<input type="text" id="lastname" name="lastname" value="<?php echo $user['lastname']; ?>">
 
-				<label for="img"><h4>Indirizzo URL della foto profilo</h4></label>
+				<label for="email"><h4>Email</h4></label>
+				<input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" required><br>
+				
+				<input id="submit_profile" name="submit_profile" type="submit" value="Submit Changes">
+			</form>
+			<form action="update_profile.php" method="POST">
+			<label for="img"><h4>Indirizzo URL della foto profilo</h4></label>
 				<input type="text" id="img" name="img" value="<?php echo $user['img']; ?>">
 
 				<label for="bio"><h4>Biografia</h4></label>
 				<input type="text" id="biografia" name="biografia" value="<?php echo $user['bio']; ?>">
 
-				<label for="email"><h4>Email</h4></label>
-				<input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" required><br>
-
 				<input type="checkbox" id="newsletter" name="newsletter" <?php if($user['newsletter']=="on") echo "checked";?>> Vuoi ricevere la nostra newsletter? </input><br>
-				
-				<input id="submit_profile" name="submit_profile" type="submit" value="Submit Changes">
+
+				<input id="submit" name="submit" type="submit" value="Submit Changes">
 			</form>
 			<form action="update_password.php" method="POST" style="margin: 10%">
 				<label for="pass_o"><h4>Password</h4></label>
