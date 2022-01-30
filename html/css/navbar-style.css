@@ -43,7 +43,8 @@
 .dotcounter {
     position: absolute;
     top: 3%;
-    right: 9.3%;
+    right: 0;
+    margin-right:3.2%;
     background-color: red;
     color:white;
     border-radius:50%;
@@ -62,7 +63,8 @@
 
 .shopimg img {
     position:absolute;
-    right:10%;
+    right:0;
+    margin-right:4%;
     top:4%;
     z-index:4;
     filter:invert();

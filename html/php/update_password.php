@@ -6,7 +6,8 @@
 </head>
 <body>
   <?php
-    require('database.php');
+      require('../../db/database.php');
+
     session_start();
     
     if(isset($_POST['submit_password'])){ // Determine if a variable is declared and is different than null

@@ -1,9 +1,6 @@
 <?php
     session_start();
 
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //error reporting for mysql server
-    $mysqli = mysqli_connect('localhost', 'root', '1234', 'dbUtenti');
-
     $result = $mysqli->prepare("SELECT product, SUM(trips) FROM orders WHERE userID=? GROUP BY product");
     $result->bind_param('i', $_SESSION['id']); 
     $result->execute();

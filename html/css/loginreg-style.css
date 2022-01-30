@@ -90,7 +90,22 @@ button {
 button:hover {
     opacity:1;
 }
-  
+
+.loginfailed {
+    position: absolute;
+    z-index: 3;
+    top:10%;
+    left:20%;
+    color:white;
+}
+
+.regfailed {
+    position: absolute;
+    z-index: 3;
+    top:7%;
+    left:17.5%;
+    color:white;
+}
 
 
   

@@ -1,9 +1,7 @@
 <?php
-    require('../html/php/database.php');
     
     session_start();
 
-    // sono necessari da fare ogni volta?
     $on = "on";
     $stmt = $mysqli->prepare("SELECT email FROM userdata WHERE newsletter LIKE ?");
     $stmt->bind_param("s", $on);

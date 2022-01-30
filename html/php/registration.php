@@ -12,7 +12,14 @@
 
 <?php
 
+    session_start();
+
+    if(!empty($_SESSION['id'])) {
+        header('Location: show_profile.php');
+    }
+
 	if(isset($_POST['submit'])) {
+        require("../../db/database.php");
 		include('../../private/createuser.php');
 	}
 ?>

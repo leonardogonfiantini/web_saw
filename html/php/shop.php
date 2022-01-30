@@ -26,7 +26,10 @@
             <h2> choose a destination now! </h2>
         </div>
 
-        <?php include("../../private/createcards.php") ?>
+        <?php 
+            require("../../db/database.php");
+            include("../../private/createcards.php");
+        ?>
         <script type="text/javascript" src="../../private/createcardsession.js"></script>
 
     </body>

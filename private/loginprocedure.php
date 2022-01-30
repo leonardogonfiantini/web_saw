@@ -1,9 +1,8 @@
 <?php
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //error reporting for mysql server
-    $mysqli = mysqli_connect('localhost', 'root', '1234', 'dbUtenti');
+    
+    session_start();
 
-    $table = "userdata";
-    $result = $mysqli->prepare("SELECT id, passwordd FROM $table WHERE email LIKE ?");
+    $result = $mysqli->prepare("SELECT id, passwordd FROM userdata WHERE email LIKE ?");
     $result->bind_param('s', $_POST['email']);
     $result->execute();
     $result->store_result();
@@ -12,18 +11,17 @@
     if ($result->num_rows == 1) {
         $result->fetch(); 
         if (password_verify($_POST['pass'], $passwordrow)) {
-            session_start();
+            if ($idrow == 1) $_SESSION['admin'] = 1;
             $_SESSION['id'] = $idrow;
-            $mysqli->close();
             $result->close();
-            echo "[login ok]";
+            $mysqli->close();
+            echo "login ok";
             header("Location: show_profile.php");
         }
     } 
     
-    
-    $mysqli->close();
     $result->close();
-    echo "[login no]";
-    header("Location: login.php");
+    $mysqli->close();
+
+    echo "<h2 class=loginfailed> login fallito :'C</h2>";
 ?>

@@ -1,25 +1,6 @@
 <?php
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); //error reporting for mysql server
-        $mysqli = mysqli_connect('localhost', 'root', '1234', 'dbUtenti');
 
-        $table = "products";
-
-        if ($result = $mysqli->query("SHOW TABLES LIKE '".$table."'")) {
-            if($result->num_rows == 0) {
-                $mysqli->query("CREATE TABLE products (
-                                id int(11) AUTO_INCREMENT,
-                                nameproduct varchar(255) NOT NULL,
-                                img varchar(255) NOT NULL,
-                                wiki varchar(255) NOT NULL,
-                                descr varchar(255) NOT NULL,
-                                price int NOT NULL,
-                                PRIMARY KEY  (ID) 
-                                )");
-            }
-        }
-
-
-        $result = $mysqli->query("SELECT * FROM $table");
+        $result = $mysqli->query("SELECT * FROM products");
         
             $margin=0;
             while ($row = mysqli_fetch_array($result)) {

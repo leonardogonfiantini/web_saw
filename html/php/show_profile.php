@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<?php
-			require('database.php');
+			require('../../db/database.php');
 			session_start();
 
 			//empty does both of the checks you are doing at once
@@ -12,17 +12,9 @@
 			if(empty($_SESSION['id'])) {
 				header('Location: pleaselogin.php');
 				die();
-			}
-			// echo "<h3>Welcome to the member's area, " . $_SESSION['id'] . "!</h3>";
-	
+			}	
 
-			// preparo variabili per le info dell'utente
-			$stmt = $mysqli->prepare("SELECT * FROM userdata WHERE id = ?");
-			$stmt->bind_param('s', $_SESSION['id']);
-			$stmt->execute();
-			$res = $stmt->get_result();
-			$user = $res->fetch_assoc();
-
+			include("../../private/fetchprofiledata.php");
 	?>
 <head>
 	<title> <?php echo $user['firstname']; ?> </title>
@@ -36,28 +28,21 @@
 	<div class="card">
 		<h2>User Info</h2>
 		<img src="<?php echo $user['img'];?>" alt="user_img" id="user_img">
-		<!-- <img src="../img/blank-profile-picture-973460_1280.webp" alt="user_img" id="user_img"> -->
 		<h1><?php echo $user['firstname']; ?></h1>
-		<p class="title">CEO & Founder, Example</p>
-		<p>Harvard University</p>
-		<div style="margin: 24px 0;">
-			<a href="https://dribbble.com"><i class="fa fa-dribbble"></i></a> <!-- icone dei social prese dal link -->
-			<a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>  
-			<a href="https://it.linkedin.com"><i class="fa fa-linkedin"></i></a>  
-			<a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a> 
-		</div>
-		<p><button onclick="support()">Contact Support</button></p>
+		<p class="title">iTime client</p><br>
+		<button onclick="support()">Contact Support</button>
 	</div>
 
 	<div id="info" class="info">
 		<div id="menu">
-			<a href="#" onclick="dispetti(1)" style="border-top-left-radius: 4vh"> Anteprima </a>
-			<a href="#" onclick="dispetti(2)"> Acquisti </a>
-			<a href="#" onclick="dispetti(3)"> Modifica </a>
-			<a href="#" onclick="dispetti(4)" style="border-top-right-radius: 4vh"> Logout </a>
+			<a href="#" onclick="togglemenu(1)" style="border-top-left-radius: 4vh"> Anteprima </a>
+			<a href="#" onclick="togglemenu(2)"> Acquisti </a>
+			<a href="#" onclick="togglemenu(3)"> Modifica </a>
+			<a href="#" onclick="togglemenu(4)" style="border-top-right-radius: 4vh"> Logout </a>
 		</div>
 
 		<section id="anteprima">
+			<br>
 			<p>Nome: </p> <h3><?php echo $user['firstname']; ?></h3><br>
 			<p>Cognome: </p> <h3><?php echo $user['lastname']; ?></h3><br>
 			<p>Email: </p> <h3><?php echo $user['email']; ?></h3><br>
@@ -125,7 +110,7 @@
 		</section>
 	</div>
 	<script>
-		function dispetti(a){
+		function togglemenu(a){
 			switch (a) {
 				case 1: //anteprima
 					document.getElementById("anteprima").style.display="block";
@@ -159,19 +144,6 @@
 			alert("Chiamaci al numero 1234567890 :)");
 		}
 
-	 	//script che tiene fermo il menù
-		window.onscroll = function() {myFunction()};
-
-		var topnav = document.getElementById("topnav");
-		var sticky = navbar.offsetTop;
-
-		function myFunction() {
-			if (window.pageYOffset >= sticky) {
-				topnav.classList.add("sticky")
-			}
-			else
-				topnav.classList.remove("sticky");
-		}
 	</script>
 </body>
 </html>
