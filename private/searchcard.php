@@ -2,7 +2,7 @@
     
     $search = "%{$_POST['search']}%"; 
 
-    $stmt = $mysqli->prepare("SELECT * FROM products WHERE nameproduct LIKE ? OR descr LIKE ? UNION SELECT * FROM $table");
+    $stmt = $mysqli->prepare("SELECT * FROM products WHERE nameproduct LIKE ? OR descr LIKE ? UNION SELECT * FROM products");
     $stmt->bind_param("ss", $search, $search);
     $stmt->execute();
     $result = $stmt->get_result();
