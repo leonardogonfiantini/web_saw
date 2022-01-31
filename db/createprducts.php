@@ -14,7 +14,7 @@
     $descr = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ad nesciunt voluptatum, incidunt aut non quasi nisi facilis commodi mollitia consequuntur placeat aperiam suscipit libero quidem ducimus nostrum aliquid iusto.";
     $price = 100;
     $i = 0;
-    while ($i < 9) {
+    while ($i < 8) {
         $result = $mysqli->prepare("INSERT INTO products (nameproduct, img, wiki, descr, price) VALUES (?, ?, ?, ?, ?)");
         $result->bind_param('ssssi', $arrayproduct[$i], $arrayurlimg[$i], $arraywiki[$i], $descr, $price);
         $result->execute();

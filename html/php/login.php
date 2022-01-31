@@ -19,7 +19,6 @@
     }
 
 	if(isset($_POST['submit'])) {
-        require("../../db/database.php");
 		include('../../private/loginprocedure.php');
 	}
 ?>
@@ -28,7 +27,7 @@
     <form id="formdati" method="post">
 
         <div class = "divleft">
-            <img src="../img/epoquechar.jpg"  width="100%" height="100%"> 
+            <img src="../img/login/epoquechar.jpg"  width="100%" height="100%"> 
         </div>
 
         <div class="returnhome">

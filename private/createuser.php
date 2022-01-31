@@ -1,5 +1,8 @@
 <?php
-    
+   
+   require("../../db/database.php");
+
+
     $cyphpasswd = password_hash($_POST['pass'], PASSWORD_DEFAULT);		
 
     $result = $mysqli->prepare("SELECT * FROM userdata WHERE email LIKE ?");

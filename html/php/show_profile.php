@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<?php
-			require('../../db/database.php');
 			session_start();
 
 			//empty does both of the checks you are doing at once
@@ -78,7 +77,7 @@
 				<label for="email"><h4>Email</h4></label>
 				<input type="email" id="email" name="email" value="<?php echo $user['email']; ?>" required><br>
 				
-				<input id="submitgen" name="submitgen" type="submit" value="Cambia generals">
+				<input id="submitgen" name="submitgen" type="submit" value="Cambia generalita">
 			</form>
 
 			<form action="update_profile.php" method="POST" style="margin-top:5%">

@@ -27,7 +27,6 @@
         </div>
 
         <?php 
-            require("../../db/database.php");
             include("../../private/createcards.php");
         ?>
         <script type="text/javascript" src="../../private/createcardsession.js"></script>

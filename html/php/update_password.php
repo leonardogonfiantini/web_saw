@@ -6,7 +6,6 @@
 </head>
 <body>
   <?php
-      require('../../db/database.php');
 
     session_start();
     

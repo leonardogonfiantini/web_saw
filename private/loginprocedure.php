@@ -1,5 +1,5 @@
 <?php
-    
+    require("../../db/database.php");
     session_start();
 
     $result = $mysqli->prepare("SELECT id, passwordd FROM userdata WHERE email LIKE ?");

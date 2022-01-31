@@ -1,4 +1,7 @@
 <?php             
+
+require("../../db/database.php");
+
     
     $search = "%{$_POST['search']}%"; 
 

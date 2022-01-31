@@ -8,8 +8,8 @@
             $mysqli->query("CREATE TABLE orders (
                             id int(11) AUTO_INCREMENT,
                             userID int(11) NOT NULL,
-                            product varchar(255) NOT NULL,
-                            trips varchar(255) NOT NULL,
+                            product varchar(20) NOT NULL,
+                            trips int NOT NULL,
                             PRIMARY KEY  (ID) 
                             )");
         }
@@ -22,9 +22,9 @@
         if($result->num_rows == 0) {
             $mysqli->query("CREATE TABLE userdata (
                             id int(11) AUTO_INCREMENT,
-                            firstname varchar(255) NOT NULL,
-                            lastname varchar(255) NOT NULL,
-                            email varchar(255) NOT NULL,
+                            firstname varchar(20) NOT NULL,
+                            lastname varchar(20) NOT NULL,
+                            email varchar(50) NOT NULL,
                             passwordd varchar(255) NOT NULL,
                             bio varchar(255) NOT NULL,
                             img varchar(255) NOT NULL,
@@ -41,9 +41,9 @@
         if($result->num_rows == 0) {
             $mysqli->query("CREATE TABLE products (
                             id int(11) AUTO_INCREMENT,
-                            nameproduct varchar(255) NOT NULL,
+                            nameproduct varchar(20) NOT NULL,
                             img varchar(255) NOT NULL,
-                            wiki varchar(255) NOT NULL,
+                            wiki varchar(20) NOT NULL,
                             descr varchar(255) NOT NULL,
                             price int NOT NULL,
                             PRIMARY KEY  (ID) 

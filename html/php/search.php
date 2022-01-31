@@ -9,7 +9,6 @@
 
     <?php 
         include("navbar.php"); 
-        require("../../db/database.php");
         include("../../private/searchcard.php");
     ?>
 

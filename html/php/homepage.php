@@ -16,7 +16,7 @@
             <div class="position">
                 <img src="../img/homepage/back-home.jpg" type="img" width="100%" height="65%">
                 <div class="principal-card"> 
-                    <h1> Why choose time travel? </h1>
+                    <h1> Why choose iTIME? </h1>
                     <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.  Obcaecati neque quasi hic cum eum illum minus!  aut ipsa quasi sint officia saepe fugiat, nihil eius. Sint vero adipisci quaerat perspiciatis ad commodi repellat illo, cupiditate quasi. Illum? </p>
                 </div>
 
@@ -126,7 +126,7 @@
                 </div>
                 <div class="grid">
                     <div class="profile top-left">
-                        <img src="../img/saitama-strength.jpg" class="bigimg" type="img" width="28%" height="70%">
+                        <img src="../img/homepage/saitama-strength.jpg" class="bigimg" type="img" width="28%" height="70%">
                         <h1> Leonardo Gonfiantini </h1>
                         <h2> saitama fan </h2>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, velit? Lorem ipsum dolor sit. </p>
@@ -145,9 +145,9 @@
                     </div>
 
                     <div class="profile top-right">
-                        <img src="../img/enrico.jpeg" class="bigimg" type="img" width="28%" height="70%">
-                        <h1> Da Baby </h1>
-                        <h2> css master </h2>
+                        <img src="../img/homepage/enrico.jpeg" class="bigimg" type="img" width="28%" height="70%">
+                        <h1> Enrico Pezzano </h1>
+                        <h2> re delle zebre </h2>
                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, velit? Lorem ipsum dolor sit amet consectetur. </p>
                         <a href="https://www.instagram.com"> <div class="icon"> 
                             <img src="../img/social/instagram.png" type="img" width="50%" height="50%">

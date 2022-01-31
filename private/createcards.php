@@ -1,5 +1,8 @@
 <?php
 
+require("../../db/database.php");
+
+
         $result = $mysqli->query("SELECT * FROM products");
         
             $margin=0;

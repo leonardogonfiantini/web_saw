@@ -5,7 +5,7 @@
 }
 body{
   background-color: rgb(23, 13, 70);
-  background-image: url("../img/wp3145772-civilization-vi-rise-and-fall-wallpapers.jpg");
+  background-image: url("../img/profile/thethinker.jpg");
   background-repeat: no-repeat;
   color: white;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -85,13 +85,13 @@ body{
 }
 
 #info a {
+  position: relative;
   background-color: rgb(40, 24, 119);
   color: white;
   cursor: pointer;
   float: left;
-  font-size: medium;
   display: inline;
-  padding: 1% 10.7%;
+  padding: 1% 10.3%;
   text-align: center;
   text-decoration: none;
 }
