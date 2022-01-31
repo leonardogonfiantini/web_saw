@@ -21,7 +21,7 @@ function register($email, $password, $first_name, $last_name, $baseurl) {
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, "email=$email&firstname=$first_name&lastname=$last_name&pass=$password&confirm=$password&submit=1");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, "email=$email&firstname=$first_name&lastname=$last_name&pass=$password&confirm=$password&submit=submit");
 
     $headers = array();
     $headers[] = 'Content-Type: application/x-www-form-urlencoded';

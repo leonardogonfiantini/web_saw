@@ -45,6 +45,7 @@ echo check_correct_user($email, $first_name, $last_name, show_logged_user($baseu
 
 echo "<br>------------------------<br>\n";
 
+
 echo "[+] Testing Update - Show Profile<br>\n";
 
 echo "[*] Generating new random user<br>\n";
@@ -67,3 +68,5 @@ echo check_correct_user($email, $first_name, $last_name, show_logged_user($baseu
     : "[*] Failed\n";
 
 echo "<br>------------------------<br>\n";
+
+?>

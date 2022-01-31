@@ -1,7 +1,5 @@
 <?php
     require '../db/database.php'; // :)
-
-
     session_start();
 
     $on = "on";
@@ -25,12 +23,12 @@
             $mail->isSMTP();                        // Set mailer to use SMTP
             $mail->Host       = 'ssl://smtp.gmail.com;';    // Specify main SMTP server
             $mail->SMTPAuth   = true;               // Enable SMTP authentication
-            $mail->Username   = 'timetravel.unige@gmail.com';
+            $mail->Username   = 'itime.newsletter@gmail.com';
             $mail->Password   = 'lillo-css00';
             $mail->SMTPSecure = 'tls';              // Enable TLS encryption, 'ssl' also accepted
             $mail->Port       = 465;                // TCP port to connect to
 
-            $mail->setFrom('timetravel.unige@gmail.com', 'TimeTravel');
+            $mail->setFrom('itime.newsletter@gmail.com', 'iTime');
             $mail->addAddress('lp.gonfiantini@gmail.com');
             $mail->addAddress('enrico.pezzano@outlook.it');
             
