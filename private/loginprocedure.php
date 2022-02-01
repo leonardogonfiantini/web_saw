@@ -2,12 +2,17 @@
     require("../../db/database.php");
     session_start();
 
-    $result = $mysqli->prepare("SELECT id, passwordd FROM userdata WHERE email LIKE ?");
-    $result->bind_param('s', $_POST['email']);
-    $result->execute();
-    $result->store_result();
-    $result->bind_result($idrow, $passwordrow); 
-
+    try {
+        $result = $mysqli->prepare("SELECT id, passwordd FROM userdata WHERE email LIKE ?");
+        $result->bind_param('s', $_POST['email']);
+        if ($result->execute()) {
+            $result->store_result();
+            $result->bind_result($idrow, $passwordrow); 
+        } else throw new Exception("erroe in execute");
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    
     if ($result->num_rows == 1) {
         $result->fetch(); 
         if (password_verify($_POST['pass'], $passwordrow)) {
@@ -19,7 +24,7 @@
             header("Location: show_profile.php");
         }
     } 
-    
+
     $result->close();
     $mysqli->close();
 

@@ -5,7 +5,7 @@
 
     $result = $mysqli->prepare("SELECT * FROM userdata WHERE email LIKE ?");
     $result->bind_param("s", $_GET['email']);
-    $result->execute();
+    if (!$result->execute()) throw new Exception("errore in execute");
     $result->store_result();
     
     if ($result->num_rows == 0) echo "SI";

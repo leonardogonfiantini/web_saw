@@ -3,7 +3,7 @@
 
     session_start();
 
-    if(isset($_POST['submitgen'])){ // Determine if a variable is declared and is different than null
+    if(isset($_POST['submit'])){ // Determine if a variable is declared and is different than null
       $firstname = $_POST['firstname'];
       $lastname = $_POST['lastname'];
       $email = $_POST['email'];
@@ -21,7 +21,7 @@
       if($rows==0 || $idrow==$_SESSION['id']){
         $result = $mysqli->prepare("UPDATE $table SET firstname=?, lastname=?, email=? WHERE id = ?");
         $result->bind_param('sssi', $firstname, $lastname, $email, $_SESSION['id']);
-        $result->execute();
+        if (!$result->execute()) throw new Exception("erroe nella execute");
         echo "<h3>Dati aggiornati correttamente!</h3>";
       }
       else{
@@ -45,7 +45,7 @@
           $result->bind_param('sssi', $bio, $img, $newsletter, $_SESSION['id']);
           $result->execute();
           echo "<h3>Dati aggiornati correttamente!</h3>";
-        }
+        } 
     }
  
     header("Location: show_profile.php");
