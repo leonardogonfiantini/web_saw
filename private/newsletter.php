@@ -23,14 +23,12 @@
             $mail->isSMTP();                        // Set mailer to use SMTP
             $mail->Host       = 'ssl://smtp.gmail.com;';    // Specify main SMTP server
             $mail->SMTPAuth   = true;               // Enable SMTP authentication
-            $mail->Username   = 'itime.newsletter@gmail.com';
-            $mail->Password   = 'lillo-css00';
+            $mail->Username   = 'email';
+            $mail->Password   = 'password';
             $mail->SMTPSecure = 'tls';              // Enable TLS encryption, 'ssl' also accepted
             $mail->Port       = 465;                // TCP port to connect to
 
             $mail->setFrom('itime.newsletter@gmail.com', 'iTime');
-            $mail->addAddress('lp.gonfiantini@gmail.com');
-            $mail->addAddress('enrico.pezzano@outlook.it');
             
             $mail->addAddress($email);
 
